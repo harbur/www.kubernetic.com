@@ -1,310 +1,352 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="utf-8"/>
-	<title>Kubernetic - The Kubernetes Desktop Client</title>
+  <meta charset="utf-8" />
+  <title>Kubernetic - The Kubernetes Desktop Client</title>
 
-	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-	<meta http-equiv="Content-Language" content="en">
-	<meta name="google-site-verification" content=""/>
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <meta http-equiv="Content-Language" content="en">
+  <meta name="google-site-verification" content="" />
 
-	<link rel="icon" href="favicon.ico" type="image/x-icon"/>
-	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon"/>
+  <link rel="icon" href="favicon.ico" type="image/x-icon" />
+  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
 
-	<meta name="apple-mobile-web-app-title" content="Kubernetic"/>
-	<meta name="application-name" content="Kubernetic"/>
-	<meta name="theme-color" content="#5f93e7"/>
+  <meta name="apple-mobile-web-app-title" content="Kubernetic" />
+  <meta name="application-name" content="Kubernetic" />
+  <meta name="theme-color" content="#5f93e7" />
 
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
-	<meta name="apple-mobile-web-app-capable" content="yes">
-	<meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="mobile-web-app-capable" content="yes">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
-	<meta name="HandheldFriendly" content="True">
-	<meta name="MobileOptimized" content="320">
-	<meta name="description" content="Kubernetic is a brand new Desktop Client for Kubernetes that lets developers and ops manage their Kubernetes cluster(s) through a UI interface in a very simple way."/>
-	<meta name="keywords" content=""/>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+  <meta name="description" content="Kubernetic is a brand new Desktop Client for Kubernetes that lets developers and ops manage their Kubernetes cluster(s) through a UI interface in a very simple way."
+  />
+  <meta name="keywords" content="" />
 
-	<meta name="twitter:card" content="photo"/>
-	<meta name="twitter:url" content="https://kubernetic.com/"/>
-	<meta name="twitter:title" content="Kubernetic - The Kubernetes Desktop Client"/>
-	<meta name="twitter:description" content="Kubernetic is a brand new Desktop Client for Kubernetes that lets developers and ops manage their Kubernetes cluster(s) through a UI interface in a very simple way.">
-	<meta name="twitter:image" content="https://kubernetic.com/assets/images/og-image.png"/>
+  <meta name="twitter:card" content="photo" />
+  <meta name="twitter:url" content="https://kubernetic.com/" />
+  <meta name="twitter:title" content="Kubernetic - The Kubernetes Desktop Client" />
+  <meta name="twitter:description" content="Kubernetic is a brand new Desktop Client for Kubernetes that lets developers and ops manage their Kubernetes cluster(s) through a UI interface in a very simple way.">
+  <meta name="twitter:image" content="https://kubernetic.com/assets/images/og-image.png" />
 
-	<meta name="twitter:image:width" content="600"/>
-	<meta name="twitter:image:height" content="315"/>
-	
-	<meta name="twitter:site" content="@harburio"/>
-	<meta name="twitter:creator" content="@harburio"/>
+  <meta name="twitter:image:width" content="600" />
+  <meta name="twitter:image:height" content="315" />
 
-	<meta property="og:type" content="website"/>
-	<meta property="og:title" content="Kubernetic - The Kubernetes Desktop Client"/>
-	<meta property="og:description" content="Kubernetic is a brand new Desktop Client for Kubernetes that lets developers and ops manage their Kubernetes cluster(s) through a UI interface in a very simple way."/>
-	<meta property="fb:admins" content=""/>
-	<meta property="og:url" content="https://www.kubernetic.com"/>
-	<meta property="og:image" content="https://kubernetic.com/assets/images/og-image.png"/>
-	<meta property="og:image:width" content="600"/>
-	<meta property="og:image:height" content="315"/>
+  <meta name="twitter:site" content="@harburio" />
+  <meta name="twitter:creator" content="@harburio" />
 
-	<link rel="stylesheet" href="assets/css/style.css"/>
-	<link rel="stylesheet" href="assets/font-awesome-4.6.3/css/font-awesome.min.css"/>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Kubernetic - The Kubernetes Desktop Client" />
+  <meta property="og:description" content="Kubernetic is a brand new Desktop Client for Kubernetes that lets developers and ops manage their Kubernetes cluster(s) through a UI interface in a very simple way."
+  />
+  <meta property="fb:admins" content="" />
+  <meta property="og:url" content="https://www.kubernetic.com" />
+  <meta property="og:image" content="https://kubernetic.com/assets/images/og-image.png" />
+  <meta property="og:image:width" content="600" />
+  <meta property="og:image:height" content="315" />
+
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <link rel="stylesheet" href="assets/font-awesome-4.6.3/css/font-awesome.min.css" />
 </head>
+
 <body class="page-home">
-<main class="main">
+  <main class="main">
 
-<header class="welcome">
-	<nav class="topbar">
-	<a href="https://kubernetic.com/" class="topbar-logo">Kubernetic</a>
+    <header class="welcome">
+      <nav class="topbar">
+        <a href="https://kubernetic.com/" class="topbar-logo">Kubernetic</a>
 
-	<div class="topbar-menu">
-		<div class="topbar-menu-additional">
-			<a href="#pricing">Pricing</a>
-			<a href="http://docs.kubernetic.com/">Documentation</a>
-		</div>
-	</div>
-</nav>
-	<div class="welcome-content">
-		<div class="welcome-sentence">
-			<h1>The Kubernetes Desktop Client</h1>
-			<p>
-				Cluster management, simplified.
-			</p>
-		</div>
+        <div class="topbar-menu">
+          <div class="topbar-menu-additional">
+            <a href="#pricing">Pricing</a>
+            <a href="http://docs.kubernetic.com/">Documentation</a>
+          </div>
+        </div>
+      </nav>
+      <div class="welcome-content">
+        <div class="welcome-sentence">
+          <h1>The Kubernetes Desktop Client</h1>
+          <p>
+            Cluster management, simplified.
+          </p>
+        </div>
 
-		<div class="welcome-buttons">
-			<a href="https://kubernetic.s3.amazonaws.com/Kubernetic-2.0.11.dmg" class="btn btn-big">DOWNLOAD FOR MAC</a>
-			<p><small style="color: #ffffff"><i>For macOS 10.8 or later. (Also available for <a href="https://kubernetic.s3.amazonaws.com/Kubernetic-2.0.11.tar.gz" style="color: #79d634">Linux</a> or <a href="https://kubernetic.s3.amazonaws.com/Kubernetic+Setup+2.0.11.exe" style="color: #79d634">Windows</a>)</i></small></p>
-		</div>
-	</div>
-</header>
-<section class="section app-features">
-	<div class="wrap-wide">
-		<div class="app-features-image">
-			<img src="assets/images/deployment-nginx.png" alt="" class="_margins" style="max-width: 874px;">
-		</div>
+        <div class="welcome-buttons">
+          <a href="https://kubernetic.s3.amazonaws.com/Kubernetic-2.0.13.dmg" class="btn btn-big">DOWNLOAD FOR MAC</a>
+          <p>
+            <small style="color: #ffffff">
+              <i>For macOS 10.8 or later. (Also available for
+                <a href="https://kubernetic.s3.amazonaws.com/Kubernetic-2.0.13.tar.gz"
+                  style="color: #79d634">Linux</a> or
+                <a href="https://kubernetic.s3.amazonaws.com/Kubernetic+Setup+2.0.13.exe" style="color: #79d634">Windows</a>)</i>
+            </small>
+          </p>
+        </div>
+      </div>
+    </header>
+    <section class="section app-features">
+      <div class="wrap-wide">
+        <div class="app-features-image">
+          <img src="assets/images/deployment-nginx.png" alt="" class="_margins" style="max-width: 874px;">
+        </div>
 
-		<div class="app-features-description">
-			<h2>Bird's eye view of the Cluster state</h2>
+        <div class="app-features-description">
+          <h2>Bird's eye view of the Cluster state</h2>
 
-			<ul>
-				<li>One screen to view all the related cluster's objects and their dependencies</li>
-				<li>Red/Green ready-state for all objects to provide a quick health check view</li>
-				<li>Quick action buttons to facilitate deletion or scaling of the application</li>
-			</ul>
-		</div>
+          <ul>
+            <li>One screen to view all the related cluster's objects and their dependencies</li>
+            <li>Red/Green ready-state for all objects to provide a quick health check view</li>
+            <li>Quick action buttons to facilitate deletion or scaling of the application</li>
+          </ul>
+        </div>
 
-	</div>
-</section>
+      </div>
+    </section>
 
-<section class="section section-dark app-features-reverse app-features">
-	<div class="wrap-wide">
+    <section class="section section-dark app-features-reverse app-features">
+      <div class="wrap-wide">
 
-		<div class="app-features-image">
-			<img src="assets/images/deployment-nginx.png" alt="" style="max-width: 874px;">
+        <div class="app-features-image">
+          <img src="assets/images/deployment-nginx.png" alt="" style="max-width: 874px;">
 
-		</div>
+        </div>
 
-		<div class="app-features-description">
-			<h2>Real Time updates</h2>
+        <div class="app-features-description">
+          <h2>Real Time updates</h2>
 
-			<ul>
-				<li>Get real-time updates of the state of your cluster</li>
-				<li>See the evolution of your cluster as it changes the actual state to meet desired state of cluster</li>
-				<li>Pin-point possible issues of downtime throughout application upgrade process, by getting eyes on-site</li>
-				<li>Training of developers / ops is much easier when they can see the actual process</li>
-			</ul>
-		</div>
-	</div>
-</section>
+          <ul>
+            <li>Get real-time updates of the state of your cluster</li>
+            <li>See the evolution of your cluster as it changes the actual state to meet desired state of cluster</li>
+            <li>Pin-point possible issues of downtime throughout application upgrade process, by getting eyes on-site</li>
+            <li>Training of developers / ops is much easier when they can see the actual process</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<section class="section app-features">
-	<div class="wrap-wide">
-		<div class="app-features-image">
-			<img src="assets/images/clusters.png" alt="" style="max-width: 874px;">
-		</div>
+    <section class="section app-features">
+      <div class="wrap-wide">
+        <div class="app-features-image">
+          <img src="assets/images/clusters.png" alt="" style="max-width: 874px;">
+        </div>
 
-		<div class="app-features-description">
-			<h2>Multiple Clusters support</h2>
+        <div class="app-features-description">
+          <h2>Multiple Clusters support</h2>
 
-			<ul>
-				<li>No configuration needed, just point and connect.</li>
-				<li>Uses your <i><code>~/.kube/config</code></i> file for authentication.</li>
-				<li>If you have <i><code>kubectl</code></i> working, then Kubernetic will be up and running in no time.</li>
-				<li>Syncs current cluster between Kubernetic and <i><code>kubectl</code></i> so you can use both at any time.</li>
-			</ul>
-		</div>
-	</div>
-</section>
+          <ul>
+            <li>No configuration needed, just point and connect.</li>
+            <li>Uses your
+              <i>
+                <code>~/.kube/config</code>
+              </i> file for authentication.</li>
+            <li>If you have
+              <i>
+                <code>kubectl</code>
+              </i> working, then Kubernetic will be up and running in no time.</li>
+            <li>Syncs current cluster between Kubernetic and
+              <i>
+                <code>kubectl</code>
+              </i> so you can use both at any time.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-<section class="section app-features app-features-reverse section-dark">
-	<div class="wrap-wide">
-		<div class="app-features-image">
-			<img src="assets/images/namespaces.png" alt="" style="max-width: 874px;">
-		</div>
-		
-		<div class="app-features-description">
-			<h2>Easy Namespace Management</h2>
+    <section class="section app-features app-features-reverse section-dark">
+      <div class="wrap-wide">
+        <div class="app-features-image">
+          <img src="assets/images/namespaces.png" alt="" style="max-width: 874px;">
+        </div>
 
-			<ul>
-				<li>Manage your namespaces easily through the UI</li>
-				<li>Instant switch of current namespace on the top menu.</li>
-				<li>Possibility to switch to aggregate view of <i>All</i> namespaces</li>
-			</ul>
-		</div>
-	</div>
-</section>
+        <div class="app-features-description">
+          <h2>Easy Namespace Management</h2>
 
-<section class="section app-features">
-	<div class="wrap-wide">
-		<div class="app-features-image">
-			<img src="assets/images/dashboard.png" alt="" style="max-width: 874px;">
-		</div>
+          <ul>
+            <li>Manage your namespaces easily through the UI</li>
+            <li>Instant switch of current namespace on the top menu.</li>
+            <li>Possibility to switch to aggregate view of
+              <i>All</i> namespaces</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-		<div class="app-features-description">
-			<h2>Dashboard view</h2>
+    <section class="section app-features">
+      <div class="wrap-wide">
+        <div class="app-features-image">
+          <img src="assets/images/dashboard.png" alt="" style="max-width: 874px;">
+        </div>
 
-			<ul>
-				<li>Real time counters of the objects in Kubernetes</li>
-				<li>Ideal for Wall or second screen displays</li>
-			</ul>
-		</div>
-	</div>
-</section>
+        <div class="app-features-description">
+          <h2>Dashboard view</h2>
 
-<section class="kubernetes-support section section-middle">
-	<div class="wrap-wide">
-		<h3 class="section-name">Native Kubernetes support</h3>
-		
-		<ul class="kubernetes-features">
-			<li>Complete replacement of CLI</li>
-			<li>No need to memorize all commands</li>
-			<li>x10 faster than using CLI</li>
-		</ul>
-	</div>
-</section><section class="section app-features-reverse app-features">
-	<div class="wrap-wide">
-		<div class="app-features-image">
-			<img src="assets/images/dashboard.png" alt="" style="max-width: 874px;">
-		</div>
-		
-		<div class="app-features-description">
-			<h2>Chart Repositories Support</h2>
+          <ul>
+            <li>Real time counters of the objects in Kubernetes</li>
+            <li>Ideal for Wall or second screen displays</li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-			<ul>
-				<li>Fully compatible with <a target="_new" href="https://helm.sh/">Helm</a> Chart Repositories</li>
-				<li>Public & Private Repositories support</li>
-				<li>One Click install process for the Charts</li>
-				<li>Manage Chart releases on the cluster through Kubernetic</li>
-			</ul>
-		</div>
+    <section class="kubernetes-support section section-middle">
+      <div class="wrap-wide">
+        <h3 class="section-name">Native Kubernetes support</h3>
 
-	</div>
-</section>
-<section id="pricing" class="section home-pricing">
-	<div class="wrap-ultra">
-		<h3 class="section-name">Pricing</h3>
+        <ul class="kubernetes-features">
+          <li>Complete replacement of CLI</li>
+          <li>No need to memorize all commands</li>
+          <li>x10 faster than using CLI</li>
+        </ul>
+      </div>
+    </section>
+    <section class="section app-features-reverse app-features">
+      <div class="wrap-wide">
+        <div class="app-features-image">
+          <img src="assets/images/dashboard.png" alt="" style="max-width: 874px;">
+        </div>
 
-		<ul class="section-description">
-			<li>Free during beta process, one-time licence fee after beta</li>
-		</ul>
+        <div class="app-features-description">
+          <h2>Chart Repositories Support</h2>
 
-<ul class="pricing-table active">
-	<li>
-		<div class="pricing-plan _most-popular">
-			<div class="pricing-plan-popular _has-text">Limited</div>
-			<div class="pricing-plan-name">Beta</div>
-			<div class="pricing-plan-price">
-				<strong>€0</strong>
-			</div>
-			<div class="pricing-plan-features">
-				<p><strong>no</strong> seat licence</p>
-				<p><strong>no</strong> fee</p>
-			</div>
-			<div class="pricing-plan-includes">
-				<div class="pricing-plan-additional">Includes</div>
-				<div class="pricing-plan-features">
-					<p><strong>unlimited</strong> clusters</p>
-					<p><strong>unlimited</strong> namespaces</p>
-				</div>
-			</div>
-		</div>
-	</li>
-	<li>
-		<div class="pricing-plan _most-popular">
-			<div class="pricing-plan-name">Stable</div>
-			<div class="pricing-plan-price">
-				<strong>€30</strong>
-			</div>
-			<div class="pricing-plan-features">
-				<p><strong>one</strong> seat licence</p>
-				<p><strong>one-time</strong> fee</p>
-			</div>
-			<div class="pricing-plan-includes">
-				<div class="pricing-plan-additional">Includes</div>
-				<div class="pricing-plan-features">
-					<p><strong>unlimited</strong> clusters</p>
-					<p><strong>unlimited</strong> namespaces</p>
-				</div>
-			</div>
-		</div>
-	</li>
-	<li>
-		<div class="pricing-plan _most-popular">
-			<div class="pricing-plan-name">Corporate Pack</div>
-			<div class="pricing-plan-price">
-				<strong>€300</strong>
-			</div>
-			<div class="pricing-plan-features">
-				<p><strong>15</strong> seats</p>
-				<p><strong>one-time</strong> fee</p>
-			</div>
-			<div class="pricing-plan-includes">
-				<div class="pricing-plan-additional">Includes</div>
-				<div class="pricing-plan-features">
-					<p><strong>unlimited</strong> clusters</p>
-					<p><strong>unlimited</strong> namespaces</p>
-				</div>
-			</div>
-		</div>
-	</li>
+          <ul>
+            <li>Fully compatible with
+              <a target="_new" href="https://helm.sh/">Helm</a> Chart Repositories</li>
+            <li>Public & Private Repositories support</li>
+            <li>One Click install process for the Charts</li>
+            <li>Manage Chart releases on the cluster through Kubernetic</li>
+          </ul>
+        </div>
 
-</ul>
-</div>
-</section>
+      </div>
+    </section>
+    <section id="pricing" class="section home-pricing">
+      <div class="wrap-ultra">
+        <h3 class="section-name">Pricing</h3>
 
-</main>
+        <ul class="section-description">
+          <li>Free during beta process, one-time licence fee after beta</li>
+        </ul>
 
-<footer class="footer">
-	<div class="wrap-wide">
-		<div class="footer-love">
-			© Harbur Cloud Solutions S.L., 2018. Built with love
-			<i class="fa fa-heart"></i>
-		</div>
-	</div>
-</footer>
+        <ul class="pricing-table active">
+          <li>
+            <div class="pricing-plan _most-popular">
+              <div class="pricing-plan-popular _has-text">Limited</div>
+              <div class="pricing-plan-name">Beta</div>
+              <div class="pricing-plan-price">
+                <strong>€0</strong>
+              </div>
+              <div class="pricing-plan-features">
+                <p>
+                  <strong>no</strong> seat licence</p>
+                <p>
+                  <strong>no</strong> fee</p>
+              </div>
+              <div class="pricing-plan-includes">
+                <div class="pricing-plan-additional">Includes</div>
+                <div class="pricing-plan-features">
+                  <p>
+                    <strong>unlimited</strong> clusters</p>
+                  <p>
+                    <strong>unlimited</strong> namespaces</p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="pricing-plan _most-popular">
+              <div class="pricing-plan-name">Stable</div>
+              <div class="pricing-plan-price">
+                <strong>€30</strong>
+              </div>
+              <div class="pricing-plan-features">
+                <p>
+                  <strong>one</strong> seat licence</p>
+                <p>
+                  <strong>one-time</strong> fee</p>
+              </div>
+              <div class="pricing-plan-includes">
+                <div class="pricing-plan-additional">Includes</div>
+                <div class="pricing-plan-features">
+                  <p>
+                    <strong>unlimited</strong> clusters</p>
+                  <p>
+                    <strong>unlimited</strong> namespaces</p>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li>
+            <div class="pricing-plan _most-popular">
+              <div class="pricing-plan-name">Corporate Pack</div>
+              <div class="pricing-plan-price">
+                <strong>€300</strong>
+              </div>
+              <div class="pricing-plan-features">
+                <p>
+                  <strong>15</strong> seats</p>
+                <p>
+                  <strong>one-time</strong> fee</p>
+              </div>
+              <div class="pricing-plan-includes">
+                <div class="pricing-plan-additional">Includes</div>
+                <div class="pricing-plan-features">
+                  <p>
+                    <strong>unlimited</strong> clusters</p>
+                  <p>
+                    <strong>unlimited</strong> namespaces</p>
+                </div>
+              </div>
+            </div>
+          </li>
 
-<script>
-  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+        </ul>
+      </div>
+    </section>
 
-  ga('create', 'UA-11756963-5', 'auto');
-  ga('send', 'pageview');
-  ga('require', 'outboundLinkTracker');
+  </main>
 
-</script>
-<script async src="assets/js/autotrack.js"></script>
-<script type="application/ld+json">
-{
-  "@context" : "http://schema.org",
-  "@type" : "Organization",
-  "name" : "Kubernetic - The Kubernetes Desktop Client",
-  "description" : "Kubernetic is a brand new Desktop Client for Kubernetes that lets developers and ops manage their Kubernetes cluster(s) through a UI interface in a very simple way.",
-  "alternateName" : "Kubernetic",
-  "url" : "https://kubernetic.com/",
-  "logo": "https://kubernetic.com/assets/images/og-logo.png"
-}
-</script>
+  <footer class="footer">
+    <div class="wrap-wide">
+      <div class="footer-love">
+        © Harbur Cloud Solutions S.L., 2018. Built with love
+        <i class="fa fa-heart"></i>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function (i, s, o, g, r, a, m) {
+      i['GoogleAnalyticsObject'] = r;
+      i[r] = i[r] || function () {
+        (i[r].q = i[r].q || []).push(arguments)
+      }, i[r].l = 1 * new Date();
+      a = s.createElement(o),
+        m = s.getElementsByTagName(o)[0];
+      a.async = 1;
+      a.src = g;
+      m.parentNode.insertBefore(a, m)
+    })(window, document, 'script', 'https://www.google-analytics.com/analytics.js', 'ga');
+
+    ga('create', 'UA-11756963-5', 'auto');
+    ga('send', 'pageview');
+    ga('require', 'outboundLinkTracker');
+  </script>
+  <script async src="assets/js/autotrack.js"></script>
+  <script type="application/ld+json">
+    {
+      "@context": "http://schema.org",
+      "@type": "Organization",
+      "name": "Kubernetic - The Kubernetes Desktop Client",
+      "description": "Kubernetic is a brand new Desktop Client for Kubernetes that lets developers and ops manage their Kubernetes cluster(s) through a UI interface in a very simple way.",
+      "alternateName": "Kubernetic",
+      "url": "https://kubernetic.com/",
+      "logo": "https://kubernetic.com/assets/images/og-logo.png"
+    }
+  </script>
 </body>
+
 </html>
