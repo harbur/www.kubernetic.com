@@ -1,5 +1,10 @@
 @charset  "UTF-8";
 
+.footer-link {
+  color: #bcc6d0;
+  border-bottom: 1px dotted #bcc6d0;
+}
+
 .typo ul,ol,ul {
     list-style: none;
 }
