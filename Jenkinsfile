@@ -1,7 +1,7 @@
 pipeline {
   agent any
   options {
-    withAWS(credentials:'aws')
+    withAWS(region: 'eu-west-1', credentials:'aws')
   }
   stages {
     stage('Hello') {
