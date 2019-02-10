@@ -10,6 +10,7 @@ pipeline {
       }
       steps {
         s3Upload(file:'docs', bucket:'www.kubernetic.com')
+        cfInvalidate(distribution:'EQ9PP9HGYEXB6', paths:['/*'], waitForCompletion: true)
       }
     }
   }
