@@ -9,7 +9,7 @@ pipeline {
         branch 'master'
       }
       steps {
-        s3Upload(file:'docs', bucket:'www.kubernetic.com')
+        s3Upload(file:'docs', bucket:'www.kubernetic.com', acl:'PublicRead')
         cfInvalidate(distribution:'EQ9PP9HGYEXB6', paths:['/*'], waitForCompletion: true)
       }
     }
