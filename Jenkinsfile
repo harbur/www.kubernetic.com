@@ -10,6 +10,7 @@ pipeline {
       }
       steps {
         script {
+          s3Upload(file:'docs', bucket:'www.kubernetic.com', path:'/')
           sh 'echo "Hello"'
           files = s3FindFiles(bucket:'www.kubernetic.com')
           echo "Files: ${files}"
