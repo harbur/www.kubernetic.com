@@ -1,17 +1,3 @@
-pipeline {
-  agent any
-  options {
-    withAWS(region: 'eu-west-1', credentials:'aws')
-  }
-  stages {
-    stage('Hello') {
-      when {
-        branch 'master'
-      }
-      steps {
-        s3Upload(file:'docs', bucket:'www.kubernetic.com', acl:'PublicRead')
-        cfInvalidate(distribution:'EQ9PP9HGYEXB6', paths:['/*'], waitForCompletion: true)
-      }
-    }
-  }
-}
+#!groovy
+@Library("kubernetic-pipeline@feature/cloudfront") _
+cloudfront(region:'eu-west-1', path:'docs', bucket:'www.kubernetic.com', distribution:'EQ9PP9HGYEXB6')
