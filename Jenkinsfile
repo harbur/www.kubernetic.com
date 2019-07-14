@@ -1,3 +1,16 @@
 #!groovy
 @Library("kubernetic-pipeline") _
-cloudfront(region:'eu-west-1', path:'docs', bucket:'www.kubernetic.com', distribution:'EQ9PP9HGYEXB6')
+  pipeline {
+    agent any
+    options {
+      withAWS(region: params.region, credentials:"aws")
+    }
+    stages {
+      stage("Push to CDN") {
+        steps {
+	  //sh("gsutil cp -r docs/* gs://www.kubernetic.com")
+         step([$class: "ClassicUploadStep", credentialsId: "woven-computing-234012",  bucket: "gs://www.kubernetic.com", pattern: "docs/*"])
+        }
+      }
+    }
+  }
