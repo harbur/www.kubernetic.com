@@ -2,20 +2,13 @@
 
 This is the website for https://kubernetic.com/
 
-## CI/CD
+# Setup
 
-CI/CD is enabled for this repository that does the following:
+Website is pushed to a Google Storage Bucket which is served by Google Cloud CDN.
 
-* For every push on the "master" branch...
-  * Upload Content to AWS S3 Bucket `www.kubernetic.com`
-  * Invalidate AWS CloudFront distribution with ID: `EQ9PP9HGYEXB6`
-
-
-# Deploy
+To setup the bucket with CDN:
 
 ```sh
-gcloud compute backend-buckets create kubernetic \
-    --enable-cdn --gcs-bucket-name=www.kubernetic.com
+gcloud compute backend-buckets create kubernetic --enable-cdn --gcs-bucket-name=www.kubernetic.com
 gsutil web set -m index.html gs://www.kubernetic.com
 ```
-
