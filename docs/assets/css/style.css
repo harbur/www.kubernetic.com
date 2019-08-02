@@ -7774,8 +7774,8 @@ div.method>pre code {
     }
 
     .app-features-image {
-        width: 40%;
-        padding: 0 0 0 50px;
+        width: 70%;
+        padding: 0 0 0 20px;
     }
 
     .app-features.app-features-reverse .app-features-image {
@@ -7789,16 +7789,20 @@ div.method>pre code {
 
 @media (min-width:968px) {
     .app-features-image {
-        width: 50%;
+        width: 70%;
     }
 
     .app-features-image img,.app-features-image svg {
         max-width: 40vw;
+        box-shadow: 0 15px 20px rgba(0,0,0,.5);
+        -webkit-box-shadow: 0 15px 20px rgba(0,0,0,.5);
     }
 
     .app-features-image img._margins,.app-features-image svg._margins {
         margin-top: -180px;
         margin-bottom: -60px;
+        box-shadow: 0 15px 20px rgba(0,0,0,.5);
+        -webkit-box-shadow: 0 15px 20px rgba(0,0,0,.5);
     }
 }
 
@@ -7828,6 +7832,7 @@ div.method>pre code {
     line-height: 1.42857;
     margin: 0 0 38px;
     font-size: 20px;
+    color: midnightblue;
 }
 
 @media screen and (min-width:320px) {

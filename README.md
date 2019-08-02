@@ -12,3 +12,7 @@ To setup the bucket with CDN:
 gcloud compute backend-buckets create kubernetic --enable-cdn --gcs-bucket-name=www.kubernetic.com
 gsutil web set -m index.html gs://www.kubernetic.com
 ```
+
+# GIFs
+
+GIFs are created with format 1500x840
