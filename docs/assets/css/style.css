@@ -8187,3 +8187,13 @@ div.method>pre code {
         font-size: 48px;
     }
 }
+
+/** Welcome Buttons **/
+.welcome-buttons p {
+    padding-top: 20px;
+    color: #ffffff;
+}
+
+.welcome-buttons p a {
+    color: #79d634;
+}
