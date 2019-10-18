@@ -1,4 +1,6 @@
 import React from "react";
+import { outboundLink } from "react-ga";
+import ReactGA from "react-ga";
 
 function Headers() {
   return (
@@ -22,27 +24,43 @@ function Headers() {
         </div>
 
         <div className="welcome-buttons">
-          <a href="https://kubernetic.s3.amazonaws.com/Kubernetic-2.4.1.dmg" className="btn btn-big">
+          <ReactGA.OutboundLink
+            className="btn btn-big"
+            eventLabel="download mac"
+            to="https://kubernetic.s3.amazonaws.com/Kubernetic-2.4.1.dmg"
+          >
             Download Now
-          </a>
+          </ReactGA.OutboundLink>
           <p>
             <small>
               <i>
                 Or choose to download for your platform:
-                <a href="https://kubernetic.s3.amazonaws.com/Kubernetic-2.4.1.dmg" className="fa fa-apple">
+                <ReactGA.OutboundLink
+                  className="fa fa-apple"
+                  eventLabel="download mac"
+                  to="https://kubernetic.s3.amazonaws.com/Kubernetic-2.4.1.dmg"
+                >
                   {" "}
                   Mac OS
-                </a>{" "}
+                </ReactGA.OutboundLink>{" "}
                 ,
-                <a href="https://kubernetic.s3.amazonaws.com/Kubernetic-2.4.1.tar.gz" className="fa fa-linux">
+                <ReactGA.OutboundLink
+                  className="fa fa-linux"
+                  eventLabel="download linux"
+                  to="https://kubernetic.s3.amazonaws.com/Kubernetic-2.4.1.tar.gz"
+                >
                   {" "}
                   Linux
-                </a>{" "}
+                  </ReactGA.OutboundLink>{" "}
                 ,
-                <a href="https://kubernetic.s3.amazonaws.com/Kubernetic+Setup+2.4.1.exe" className="fa fa-windows">
+                <ReactGA.OutboundLink
+                  className="fa fa-windows"
+                  eventLabel="download win"
+                  to="https://kubernetic.s3.amazonaws.com/Kubernetic+Setup+2.4.1.exe"
+                >
                   {" "}
                   Windows
-                </a>
+                  </ReactGA.OutboundLink>
               </i>
             </small>
           </p>

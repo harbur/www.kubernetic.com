@@ -10,6 +10,10 @@ import NativeKubernetes from './components/features/NativeKubernetes';
 import ChartRepositories from './components/features/ChartRepositories';
 import PricingTable from './components/PricingTable';
 import Footers from './components/Footer';
+import ReactGA from 'react-ga';
+
+ReactGA.initialize('UA-11756963-5');
+ReactGA.pageview(window.location.pathname + window.location.search);
 
 function App() {
   return (
