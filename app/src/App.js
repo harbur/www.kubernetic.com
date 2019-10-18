@@ -1,24 +1,29 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import HeroBanner from './components/HeroBanner';
+import BirdsEye from './components/features/BirdsEye';
+import RealTimeUpdates from './components/features/RealTimeUpdates';
+import MultiCluster from './components/features/MultiCluster';
+import ManageNamespaces from './components/features/ManageNamespaces';
+import DashboardView from './components/features/DashboardView';
+import NativeKubernetes from './components/features/NativeKubernetes';
+import ChartRepositories from './components/features/ChartRepositories';
+import PricingTable from './components/PricingTable';
+import Footers from './components/Footer';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="main">
+      <HeroBanner/>
+      <BirdsEye/>
+      <RealTimeUpdates/>
+      <MultiCluster/>
+      <ManageNamespaces/>
+      <DashboardView/>
+      <NativeKubernetes/>
+      <ChartRepositories/>
+      <PricingTable/>
+      <Footers/>
     </div>
   );
 }
