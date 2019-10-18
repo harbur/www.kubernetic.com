@@ -2,9 +2,9 @@ import React from "react";
 
 function ChartRepositories() {
   return (
-    <section class="section app-features-reverse app-features">
-      <div class="wrap-wide">
-        <div class="app-features-image">
+    <section className="section app-features-reverse app-features">
+      <div className="wrap-wide">
+        <div className="app-features-image">
           <img
             src="assets/images/chart-repos.png"
             alt=""
@@ -12,7 +12,7 @@ function ChartRepositories() {
           />
         </div>
 
-        <div class="app-features-description">
+        <div className="app-features-description">
           <h2>Chart Repositories Support</h2>
 
           <ul>

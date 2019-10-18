@@ -2,9 +2,9 @@ import React from "react";
 
 function DashboardView() {
   return (
-    <section class="section app-features">
-      <div class="wrap-wide">
-        <div class="app-features-image">
+    <section className="section app-features">
+      <div className="wrap-wide">
+        <div className="app-features-image">
           <img
             src="assets/images/dashboard.png"
             alt="dashboard view"
@@ -12,7 +12,7 @@ function DashboardView() {
           />
         </div>
 
-        <div class="app-features-description">
+        <div className="app-features-description">
           <h2>Dashboard view</h2>
 
           <ul>

@@ -2,9 +2,9 @@ import React from "react";
 
 function ManageNamespaces() {
   return (
-    <section class="section app-features app-features-reverse section-dark">
-      <div class="wrap-wide">
-        <div class="app-features-image">
+    <section className="section app-features app-features-reverse section-dark">
+      <div className="wrap-wide">
+        <div className="app-features-image">
           <img
             src="assets/images/namespaces.png"
             alt="view and creation process of namespaces"
@@ -12,7 +12,7 @@ function ManageNamespaces() {
           />
         </div>
 
-        <div class="app-features-description">
+        <div className="app-features-description">
           <h2>Easy Namespace Management</h2>
 
           <ul>

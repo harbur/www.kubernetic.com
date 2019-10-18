@@ -2,9 +2,9 @@ import React from "react";
 
 function BirdsEye() {
   return (
-    <section class="section app-features">
-      <div class="wrap-wide">
-        <div class="app-features-image">
+    <section className="section app-features">
+      <div className="wrap-wide">
+        <div className="app-features-image">
           <img
             src="assets/images/deployment-nginx.png"
             alt="deployment process of nginx"
@@ -12,7 +12,7 @@ function BirdsEye() {
           />
         </div>
 
-        <div class="app-features-description">
+        <div className="app-features-description">
           <h2>Bird's eye view of the Cluster state</h2>
 
           <ul>

@@ -2,9 +2,9 @@ import React from "react";
 
 function RealTimeUpdates() {
   return (
-    <section class="section section-dark app-features-reverse app-features">
-      <div class="wrap-wide">
-        <div class="app-features-image">
+    <section className="section section-dark app-features-reverse app-features">
+      <div className="wrap-wide">
+        <div className="app-features-image">
           <img
             src="assets/images/deployment-update-version.png"
             alt="update a deployment version and see results on real-time"
@@ -12,7 +12,7 @@ function RealTimeUpdates() {
           />
         </div>
 
-        <div class="app-features-description">
+        <div className="app-features-description">
           <h2>Real Time updates</h2>
 
           <ul>

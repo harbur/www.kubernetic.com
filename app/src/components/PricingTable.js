@@ -2,26 +2,26 @@ import React from "react";
 
 function PricingTable() {
   return (
-    <section id="pricing" class="section home-pricing">
-      <div class="wrap-ultra">
-        <h3 class="section-name">Pricing</h3>
+    <section id="pricing" className="section home-pricing">
+      <div className="wrap-ultra">
+        <h3 className="section-name">Pricing</h3>
 
-        <ul class="pricing-table active">
+        <ul className="pricing-table active">
           <li>
-            <div class="pricing-plan _most-popular">
-              <div class="pricing-plan-popular _has-text">Limited</div>
-              <div class="pricing-plan-name">Desktop Edition</div>
-              <div class="pricing-plan-price">
+            <div className="pricing-plan _most-popular">
+              <div className="pricing-plan-popular _has-text">Limited</div>
+              <div className="pricing-plan-name">Desktop Edition</div>
+              <div className="pricing-plan-price">
                 <strong>€59</strong>
               </div>
-              <div class="pricing-plan-features">
+              <div className="pricing-plan-features">
                 <p />
                 per user / year
                 <p />
               </div>
-              <div class="pricing-plan-includes">
-                <div class="pricing-plan-additional">Includes</div>
-                <div class="pricing-plan-features">
+              <div className="pricing-plan-includes">
+                <div className="pricing-plan-additional">Includes</div>
+                <div className="pricing-plan-features">
                   <p>
                   1 user
                   </p>
@@ -39,7 +39,7 @@ function PricingTable() {
                   </p>
                 </div>
               </div>
-              <a href="" class="btn btn-big">
+              <a href="" className="btn btn-big">
                 Buy Now
               </a>
             </div>

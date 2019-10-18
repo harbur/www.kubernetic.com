@@ -2,13 +2,13 @@ import React from "react";
 
 function MultiCluster() {
   return (
-    <section class="section app-features">
-      <div class="wrap-wide">
-        <div class="app-features-image">
+    <section className="section app-features">
+      <div className="wrap-wide">
+        <div className="app-features-image">
           <img src="assets/images/clusters.png" alt="manage multiple contexts of kubeconfig" style={{ maxWidth: "700px" }} />
         </div>
 
-        <div class="app-features-description">
+        <div className="app-features-description">
           <h2>Multiple Clusters support</h2>
 
           <ul>
