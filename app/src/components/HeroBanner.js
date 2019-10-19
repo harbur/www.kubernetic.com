@@ -1,5 +1,5 @@
 import React from "react";
-import { outboundLink } from "react-ga";
+import { OutboundLink } from "react-ga";
 import ReactGA from "react-ga";
 
 function Headers() {
@@ -24,13 +24,13 @@ function Headers() {
         </div>
 
         <div className="welcome-buttons">
-          <ReactGA.OutboundLink
+          <OutboundLink
             className="btn btn-big"
             eventLabel="download mac"
             to="https://kubernetic.s3.amazonaws.com/Kubernetic-2.4.1.dmg"
           >
             Download Now
-          </ReactGA.OutboundLink>
+          </OutboundLink>
           <p>
             <small>
               <i>
