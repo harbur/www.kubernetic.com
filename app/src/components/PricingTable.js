@@ -3,13 +3,11 @@ import licenseServer from "../services/licenseServer";
 
 class PricingTable extends React.Component {
   async handleClick() {
-    let code = await licenseServer.createSession()
-    console.log(code)
     const stripe = window.Stripe('pk_test_T7mLNhEI2PjHP95pAVXjTmKz00n4zAWGQ3');
-    const {error} = await stripe.redirectToCheckout({
+    let code = await licenseServer.createSession()
+    await stripe.redirectToCheckout({
       sessionId: code.id
     })
-    
   }
 
   render() {
@@ -24,7 +22,7 @@ class PricingTable extends React.Component {
                 <div className="pricing-plan-popular _has-text">Limited</div>
                 <div className="pricing-plan-name">Desktop Edition</div>
                 <div className="pricing-plan-price">
-                  <strong>€59</strong>
+                  <strong>€60</strong>
                 </div>
                 <div className="pricing-plan-features">
                   <p />
@@ -45,9 +43,9 @@ class PricingTable extends React.Component {
                     </p>
                   </div>
                 </div>
-                <a onClick={() => this.handleClick()} className="btn btn-big">
+                <button onClick={() => this.handleClick()} className="btn btn-big">
                   Buy Now
-                </a>
+                </button>
               </div>
             </li>
           </ul>
