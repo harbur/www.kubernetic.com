@@ -1,27 +1,9 @@
 import React from "react";
 import { OutboundLink } from "react-ga";
 import ReactGA from "react-ga";
-import { Link } from "react-router-dom";
 
 function Headers() {
   return (
-    <div>
-            <header className="welcome">
-
-<nav className="topbar">
-  <Link to="/" className="topbar-logo">
-    Kubernetic
-  </Link>
-
-  <div className="topbar-menu">
-    <div className="topbar-menu-additional">
-      <a href="#pricing">Pricing</a>
-      <a href="http://docs.kubernetic.com/">Documentation</a>
-    </div>
-  </div>
-</nav>
-</header>
-
     <header className="welcome">
       <div className="welcome-content">
         <div className="welcome-sentence">
@@ -73,7 +55,6 @@ function Headers() {
         </div>
       </div>
     </header>
-    </div>
   );
 }
 
