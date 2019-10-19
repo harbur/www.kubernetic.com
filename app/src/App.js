@@ -21,16 +21,16 @@ function App() {
   return (
     <HttpsRedirect>
       <Router>
-          <HeroBanner />
-          <BirdsEye />
-          <RealTimeUpdates />
-          <MultiCluster />
-          <ManageNamespaces />
-          <DashboardView />
-          <NativeKubernetes />
-          <ChartRepositories />
-          <PricingTable />
-          <Footers />
+        <HeroBanner />
+        <BirdsEye />
+        <RealTimeUpdates />
+        <MultiCluster />
+        <ManageNamespaces />
+        <DashboardView />
+        <NativeKubernetes />
+        <ChartRepositories />
+        <PricingTable />
+        <Footers />
       </Router>
     </HttpsRedirect>
   );
