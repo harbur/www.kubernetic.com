@@ -5,7 +5,7 @@ function MultiCluster() {
     <section className="section app-features">
       <div className="wrap-wide">
         <div className="app-features-image">
-          <img src="assets/images/clusters.png" alt="manage multiple contexts of kubeconfig" style={{ maxWidth: "700px" }} />
+          <img src="/assets/images/clusters.png" alt="manage multiple contexts of kubeconfig" style={{ maxWidth: "700px" }} />
         </div>
 
         <div className="app-features-description">

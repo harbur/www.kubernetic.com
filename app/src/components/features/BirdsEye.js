@@ -6,7 +6,7 @@ function BirdsEye() {
       <div className="wrap-wide">
         <div className="app-features-image">
           <img
-            src="assets/images/deployment-nginx.png"
+            src="/assets/images/deployment-nginx.png"
             alt="deployment process of nginx"
             style={{maxWidth: '700px'}}
           />

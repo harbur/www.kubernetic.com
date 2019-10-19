@@ -6,7 +6,7 @@ function Footer() {
       <div className="wrap-wide">
         <div className="footer-love">
           © <a href="https://harbur.io">Harbur Cloud Solutions</a>, 2019. Built
-          with love
+          with love{" "}
           <i className="fa fa-heart"></i>
           <p />
           <a className="footer-link" href="https://harbur.io/privacy">

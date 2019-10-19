@@ -6,7 +6,7 @@ function DashboardView() {
       <div className="wrap-wide">
         <div className="app-features-image">
           <img
-            src="assets/images/dashboard.png"
+            src="/assets/images/dashboard.png"
             alt="dashboard view"
             style={{ maxWidth: "700px" }}
           />

@@ -6,7 +6,7 @@ function ChartRepositories() {
       <div className="wrap-wide">
         <div className="app-features-image">
           <img
-            src="assets/images/chart-repos.png"
+            src="/assets/images/chart-repos.png"
             alt=""
             style={{ maxWidth: "700px" }}
           />

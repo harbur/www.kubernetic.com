@@ -6,7 +6,7 @@ function ManageNamespaces() {
       <div className="wrap-wide">
         <div className="app-features-image">
           <img
-            src="assets/images/namespaces.png"
+            src="/assets/images/namespaces.png"
             alt="view and creation process of namespaces"
             style={{ maxWidth: "700px" }}
           />

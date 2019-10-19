@@ -6,7 +6,7 @@ function RealTimeUpdates() {
       <div className="wrap-wide">
         <div className="app-features-image">
           <img
-            src="assets/images/deployment-update-version.png"
+            src="/assets/images/deployment-update-version.png"
             alt="update a deployment version and see results on real-time"
             style={{ maxWidth: "700px" }}
           />
