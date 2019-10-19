@@ -1,6 +1,6 @@
 import React from "react";
 
-function Footers() {
+function Footer() {
   return (
     <footer className="footer">
       <div className="wrap-wide">
@@ -18,4 +18,4 @@ function Footers() {
   );
 }
 
-export default Footers;
+export default Footer;

@@ -1422,10 +1422,10 @@ body.page-guides .marketing-lists ol>li:before,body.page-guides .marketing-lists
 }
 
 .header {
-    background-image: -webkit-linear-gradient(230deg,#3895ff 12%,#005bd0 100%);
-    background-image: -moz-linear-gradient(230deg,#3895ff 12%,#005bd0 100%);
-    background-image: -o-linear-gradient(230deg,#3895ff 12%,#005bd0 100%);
-    background-image: linear-gradient(220deg,#3895ff 12%,#005bd0 100%);
+    background-image: -webkit-linear-gradient(180deg,#3895ff 12%,#005bd0 100%);
+    background-image: -moz-linear-gradient(180deg,#3895ff 12%,#005bd0 100%);
+    background-image: -o-linear-gradient(180deg,#3895ff 12%,#005bd0 100%);
+    background-image: linear-gradient(180deg,#3895ff 12%,#005bd0 100%);
     color: #fff;
 }
 
@@ -6603,14 +6603,18 @@ div.method>pre code {
 }
 
 .topbar {
-    background-image: -webkit-linear-gradient(230deg,#3895ff 12%,#005bd0 100%);
-    background-image: -moz-linear-gradient(230deg,#3895ff 12%,#005bd0 100%);
-    background-image: -o-linear-gradient(230deg,#3895ff 12%,#005bd0 100%);
-    background-image: linear-gradient(220deg,#3895ff 12%,#005bd0 100%);
+    background-image: -webkit-linear-gradient(180deg,#3895ff 12%,#005bd0 100%);
+    background-image: -moz-linear-gradient(180deg,#3895ff 12%,#005bd0 100%);
+    background-image: -o-linear-gradient(180deg,#3895ff 12%,#005bd0 100%);
+    background-image: linear-gradient(180deg,#3895ff 12%,#005bd0 100%);
     padding: 16px;
 }
 
 .header .topbar,.welcome .topbar {
+    background-image: -webkit-linear-gradient(90deg,#3895ff 12%,#005bd0 100%);
+    background-image: -moz-linear-gradient(90deg,#3895ff 12%,#005bd0 100%);
+    background-image: -o-linear-gradient(90deg,#3895ff 12%,#005bd0 100%);
+    background-image: linear-gradient(90deg,#3895ff 12%,#005bd0 100%);
     background: 0 0;
 }
 
@@ -6695,10 +6699,10 @@ div.method>pre code {
 }
 
 .welcome {
-    background: -webkit-linear-gradient(130deg,#3895FF 12%,#005BD0 100%);
-    background: -moz-linear-gradient(130deg,#3895FF 12%,#005BD0 100%);
-    background: -o-linear-gradient(130deg,#3895FF 12%,#005BD0 100%);
-    background: linear-gradient(320deg,#3895FF 12%,#005BD0 100%);
+    background: -webkit-linear-gradient(90deg,#3895FF 12%,#005BD0 100%);
+    background: -moz-linear-gradient(90deg,#3895FF 12%,#005BD0 100%);
+    background: -o-linear-gradient(90deg,#3895FF 12%,#005BD0 100%);
+    background: linear-gradient(90deg,#3895FF 12%,#005BD0 100%);
 }
 
 .welcome-content {
@@ -7389,10 +7393,10 @@ div.method>pre code {
 }
 
 .sign-up {
-    background-image: -webkit-linear-gradient(230deg,#3895ff 12%,#005bd0 100%);
-    background-image: -moz-linear-gradient(230deg,#3895ff 12%,#005bd0 100%);
-    background-image: -o-linear-gradient(230deg,#3895ff 12%,#005bd0 100%);
-    background-image: linear-gradient(220deg,#3895ff 12%,#005bd0 100%);
+    background-image: -webkit-linear-gradient(180deg,#3895ff 12%,#005bd0 100%);
+    background-image: -moz-linear-gradient(180deg,#3895ff 12%,#005bd0 100%);
+    background-image: -o-linear-gradient(180deg,#3895ff 12%,#005bd0 100%);
+    background-image: linear-gradient(180deg,#3895ff 12%,#005bd0 100%);
     color: #fff;
 }
 
