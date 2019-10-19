@@ -1,14 +1,15 @@
 import React from "react";
 import { OutboundLink } from "react-ga";
 import ReactGA from "react-ga";
+import { Link } from "react-router-dom";
 
 function Headers() {
   return (
     <header className="welcome">
       <nav className="topbar">
-        <a href="https://kubernetic.com/" className="topbar-logo">
+        <Link to="/" className="topbar-logo">
           Kubernetic
-        </a>
+        </Link>
 
         <div className="topbar-menu">
           <div className="topbar-menu-additional">
@@ -51,7 +52,7 @@ function Headers() {
                 >
                   {" "}
                   Linux
-                  </ReactGA.OutboundLink>{" "}
+                </ReactGA.OutboundLink>{" "}
                 ,
                 <ReactGA.OutboundLink
                   className="fa fa-windows"
@@ -60,7 +61,7 @@ function Headers() {
                 >
                   {" "}
                   Windows
-                  </ReactGA.OutboundLink>
+                </ReactGA.OutboundLink>
               </i>
             </small>
           </p>
