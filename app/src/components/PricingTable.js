@@ -36,8 +36,8 @@ class PricingTable extends React.Component {
                   <div className="pricing-plan-additional">Includes</div>
                   <div className="pricing-plan-features">
                     <p>1 user</p>
-                    <p>Unlimited app updates</p>
-                    <p>Multi-OS license</p>
+                    <p>unlimited app updates</p>
+                    <p>multi-OS license</p>
                     <p>
                       <strong>unlimited</strong> clusters
                     </p>
