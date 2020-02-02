@@ -3,7 +3,8 @@ import licenseServer from "../services/licenseServer";
 
 class PricingTable extends React.Component {
   async handleClick() {
-    const stripe = window.Stripe('pk_test_T7mLNhEI2PjHP95pAVXjTmKz00n4zAWGQ3');
+    // TODO: parametrize Stripe public key for PRO and BETA
+    const stripe = window.Stripe('pk_live_STtPmOIz0ofohsd3WqPKB4Lo00f5xOj2iB');
     let code = await licenseServer.createSession()
     await stripe.redirectToCheckout({
       sessionId: code.id

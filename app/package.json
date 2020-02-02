@@ -14,6 +14,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
+    "prepublish": "npm run build",
+    "publish": "gsutil -m cp -r build/* gs://www.kubernetic.com/",
     "prepublish:beta": "npm run build",
     "publish:beta": "gsutil -m cp -r build/* gs://beta.kubernetic.com/",
     "test": "react-scripts test",
