@@ -23,12 +23,14 @@ class PricingTable extends React.Component {
                 <div className="pricing-plan-popular _has-text">Limited</div>
                 <div className="pricing-plan-name">Desktop Edition</div>
                 <div className="pricing-plan-price">
-                  <strong>€60</strong>
+                  <strong><strike style={{color: "#a6a6a6"}}>€60</strike></strong><br/>
+                  <strong>€30</strong>
                 </div>
                 <div className="pricing-plan-features">
                   <p />
-                  per user / year
+                  one time fee
                   <p />
+                  <p>EARLY BIRD</p>
                 </div>
                 <div className="pricing-plan-includes">
                   <div className="pricing-plan-additional">Includes</div>
