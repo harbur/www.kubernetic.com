@@ -15,7 +15,7 @@ function Headers() {
           <OutboundLink
             className="btn btn-big"
             eventLabel="download mac"
-            to="https://kubernetic.s3.amazonaws.com/Kubernetic-2.5.0.dmg"
+            to="https://kubernetic.s3.amazonaws.com/Kubernetic-2.6.0.dmg"
           >
             Download Now
           </OutboundLink>
@@ -26,7 +26,7 @@ function Headers() {
                 <ReactGA.OutboundLink
                   className="fa fa-apple"
                   eventLabel="download mac"
-                  to="https://kubernetic.s3.amazonaws.com/Kubernetic-2.5.0.dmg"
+                  to="https://kubernetic.s3.amazonaws.com/Kubernetic-2.6.0.dmg"
                 >
                   {" "}
                   Mac OS
@@ -35,7 +35,7 @@ function Headers() {
                 <ReactGA.OutboundLink
                   className="fa fa-linux"
                   eventLabel="download linux"
-                  to="https://kubernetic.s3.amazonaws.com/Kubernetic-2.5.0.tar.gz"
+                  to="https://kubernetic.s3.amazonaws.com/Kubernetic-2.6.0.tar.gz"
                 >
                   {" "}
                   Linux
@@ -44,7 +44,7 @@ function Headers() {
                 <ReactGA.OutboundLink
                   className="fa fa-windows"
                   eventLabel="download win"
-                  to="https://kubernetic.s3.amazonaws.com/Kubernetic+Setup+2.5.0.exe"
+                  to="https://kubernetic.s3.amazonaws.com/Kubernetic+Setup+2.6.0.exe"
                 >
                   {" "}
                   Windows
