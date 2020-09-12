@@ -1,5 +1,5 @@
 import React from "react";
-import { Divider, Form, FormGroup } from "semantic-ui-react";
+import { Button, Divider, Form, FormGroup } from "semantic-ui-react";
 import getStripe from "@utils/stripe/getStripe";
 import licenseServer from "@utils/services/licenseServer";
 
@@ -60,9 +60,9 @@ export default function PricingTable() {
                 />
                 <Divider hidden />
               </FormGroup>
-              <button onClick={() => handleClick(licenses)} className="btn btn-big">
+              <Button onClick={() => handleClick(licenses)} className="btn btn-big">
                 Buy Now
-                </button>
+                </Button>
             </div>
           </li>
         </ul>
