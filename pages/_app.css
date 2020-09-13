@@ -3077,6 +3077,7 @@ img.mfp-img {
     text-align: center;
     padding: 24px 0;
     margin: 0 0 16px;
+    min-height: 700px;
 }
 
 .pricing-plan:before {
@@ -8004,4 +8005,9 @@ body {
     border-radius: 5px;
     padding: 40px 80px 60px 80px;
     margin-bottom: 1.55rem;
+}
+
+form label {
+  font-weight: 300 !important;
+  margin-bottom: 0px !important;
 }
