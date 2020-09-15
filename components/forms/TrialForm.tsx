@@ -25,7 +25,7 @@ export default function TrialForm() {
   return (
     <Segment color="blue" style={{ textAlign: "left", paddingLeft: "30px", paddingRight: "30px", paddingTop: "30px" }}>
       <Header>Get Started with Kubernetic Enterprise in minutes</Header>
-      <HeaderSubHeader>After signing up, we will send you a trial license which will be active for 14 days with seats for 3 users. Once you get your license you can follow the installation process in <Link href="https://develop--docs-kubernetic.netlify.app/#/installation/enterprise"><a>our guide</a></Link>.</HeaderSubHeader>
+      <HeaderSubHeader>After signing up, we will send you a trial license which will be active for 14 days with seats for 3 users. Once you get your license you can follow the installation process in <Link href="https://docs.kubernetic.com/#/installation/enterprise"><a>our guide</a></Link>.</HeaderSubHeader>
       <Divider hidden />
       <form className="ui form" name="enterprise-trial" method="POST" aria-disabled={true} data-netlify="true">
         <Header size="tiny">Trial Details</Header>
