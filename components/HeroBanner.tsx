@@ -15,7 +15,7 @@ export default function HeroBanner() {
           <OutboundLink
             className="btn btn-big"
             eventLabel="download mac"
-            to="https://kubernetic.s3.amazonaws.com/Kubernetic-2.11.1.dmg"
+            to="https://kubernetic.s3.amazonaws.com/Kubernetic-2.12.0.dmg"
           >
             Download Now
           </OutboundLink>
@@ -26,7 +26,7 @@ export default function HeroBanner() {
                 <ReactGA.OutboundLink
                   className="fa fa-apple"
                   eventLabel="download mac"
-                  to="https://kubernetic.s3.amazonaws.com/Kubernetic-2.11.1.dmg"
+                  to="https://kubernetic.s3.amazonaws.com/Kubernetic-2.12.0.dmg"
                 >
                   {" "}
                   <FontAwesomeIcon icon={['fab', 'apple']} />
@@ -36,7 +36,7 @@ export default function HeroBanner() {
                 ,
                 <ReactGA.OutboundLink
                   eventLabel="download linux"
-                  to="https://kubernetic.s3.amazonaws.com/Kubernetic-2.11.1.tar.gz"
+                  to="https://kubernetic.s3.amazonaws.com/Kubernetic-2.12.0.tar.gz"
                 >
                   {" "}
                   <FontAwesomeIcon icon={['fab', 'linux']} />
@@ -47,7 +47,7 @@ export default function HeroBanner() {
                 <ReactGA.OutboundLink
                   className="fa fa-windows"
                   eventLabel="download win"
-                  to="https://kubernetic.s3.amazonaws.com/Kubernetic+Setup+2.11.1.exe"
+                  to="https://kubernetic.s3.amazonaws.com/Kubernetic+Setup+2.12.0.exe"
                 >
                   {" "}
                   <FontAwesomeIcon icon={['fab', 'windows']} />
