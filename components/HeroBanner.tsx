@@ -1,64 +1,18 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import React from "react";
-import ReactGA, { OutboundLink } from "react-ga";
+import DownloadButton from "./DownloadButton"
 
 export default function HeroBanner() {
   return (
-    <header className="welcome">
-      <div className="welcome-content">
-        <div className="welcome-sentence">
-          <h1>The Kubernetes Desktop Client</h1>
-          <p>Cluster management, simplified.</p>
-        </div>
-
-        <div className="welcome-buttons">
-          <OutboundLink
-            className="btn btn-big"
-            eventLabel="download mac"
-            to="https://kubernetic.s3.amazonaws.com/Kubernetic-2.13.0.dmg"
-          >
-            Download Now
-          </OutboundLink>
-          <p>
-            <small>
-              <i>
-                Or choose to download for your platform:
-                <ReactGA.OutboundLink
-                  className="fa fa-apple"
-                  eventLabel="download mac"
-                  to="https://kubernetic.s3.amazonaws.com/Kubernetic-2.13.0.dmg"
-                >
-                  {" "}
-                  <FontAwesomeIcon icon={['fab', 'apple']} />
-                  {" "}
-                  Mac OS
-                </ReactGA.OutboundLink>{" "}
-                ,
-                <ReactGA.OutboundLink
-                  eventLabel="download linux"
-                  to="https://kubernetic.s3.amazonaws.com/Kubernetic-2.13.0.tar.gz"
-                >
-                  {" "}
-                  <FontAwesomeIcon icon={['fab', 'linux']} />
-                  {" "}
-                  Linux
-                </ReactGA.OutboundLink>{" "}
-                ,
-                <ReactGA.OutboundLink
-                  className="fa fa-windows"
-                  eventLabel="download win"
-                  to="https://kubernetic.s3.amazonaws.com/Kubernetic+Setup+2.13.0.exe"
-                >
-                  {" "}
-                  <FontAwesomeIcon icon={['fab', 'windows']} />
-                  {" "}
-                  Windows
-                </ReactGA.OutboundLink>
-              </i>
-            </small>
-          </p>
+    <div className="py-12 bg-blue-600 hideout background">
+      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="lg:text-center pt-20 pb-48">
+          <h3 className="mt-2 pt-40 text-3xl font-light text-white sm:text-5xl lg:text-6xl sm:leading-tight">The Kubernetes Desktop Client</h3>
+          <p className="mt-4 pt-6 max-w-2xl text-2xl leading-7 text-white lg:mx-auto">Cluster management, simplified.</p>
+          <div className="pt-16">
+            <DownloadButton />
+          </div>
         </div>
       </div>
-    </header>
+    </div >
   )
 }
+

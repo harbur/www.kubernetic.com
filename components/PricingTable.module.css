@@ -1,0 +1,7 @@
+.list {
+  background-image: url(/images/circle-checkmark-green.svg);
+  background-repeat: no-repeat;
+  background-size: 1.25rem 1.25rem;
+  background-position: 0 0;
+  padding-left: 28px;
+}

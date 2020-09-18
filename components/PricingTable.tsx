@@ -1,122 +1,178 @@
-import React from "react";
-import { Button, Divider, Form, FormGroup } from "semantic-ui-react";
-import getStripe from "@utils/stripe/getStripe";
-import licenseServer from "@utils/services/licenseServer";
 import Link from "next/link";
+import { OutboundLink } from "react-ga";
+import { Divider, Form, FormGroup } from "semantic-ui-react";
+import { GroupIcon, UserIcon } from "./Icons";
+import style from './PricingTable.module.css';
 
+/**
+ * Pricing Table section.
+ * 
+ * Section is in gray background, contains a table with two columns, for desktop and enterprise pricing.
+ * 
+ * It has a footer with legal details (EUR contains a tooltip, terms-and-policies redirect to policy)
+ */
 export default function PricingTable() {
   return (
-    <section id="pricing" className="section home-pricing">
-      <div className="wrap-ultra">
-        <h3 className="section-name">Pricing</h3>
+    <>
+      <div id="pricing" className="bg-gray-200">
+        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="lg:text-center pb-20">
+            <h2 className="mt-8 pt-20 text-3xl font-light sm:text-6xl sm:leading-tight">The right price for you</h2>
+          </div>
+          <div className="grid md:grid-cols-2 gap-4 text-center pb-10">
+            <PricingColumnIndividual />
+            <PricingColumnTeam />
+          </div>
+          <div className="text-center italic font-light text-gray-700 text-sm pb-10">Prices listed in <span aria-label="Euro" data-balloon-pos="up" className="border-b border-gray-500 border-dotted">EUR</span>. Taxes may apply. By using Kubernetic you agree to our <a target="_blank" href="https://harbur.io/privacy" className="border-b border-gray-500 border-dotted">terms and policies</a>.</div>
+        </div>
+      </div >
+    </>
+  )
+}
 
-        <ul className="pricing-table active" style={{ maxWidth: "600px" }}>
-          <DesktopPricing />
-          <EnterprisePricing />
+/**
+ * Pricing Column for Desktop License.
+ */
+function PricingColumnIndividual() {
+  return (
+    <div className="flex flex-col bg-white border-2 rounded-lg divide-y divide-gray-300">
+      <PricingHeader title="Kubernetic Desktop" subtitle="A pay-once license, just for you" icon={<UserIcon />} />
+      <div className="flex-1">
+        <h2 className="p-4 text-left font-bold">
+          <span className="text-3xl">€ 30</span>
+          <span className="text-md pl-2 font-bold">one-time payment</span>
+        </h2>
+        <ul className="p-4 pl-4 text-left font-bold">
+          <PricingListItem
+            title="The Desktop Client app — yours to keep, forever"
+            subtitle="The best companion to extend your CLI tooling with a Desktop UI." />
+          <PricingListItem
+            title="One year of app updates"
+            subtitle="Stay up to date with new features and improvements." />
+          <PricingListItem
+            title="Multi-OS License"
+            subtitle="Stay up to date with new features and improvements." />
+          <PricingListItem
+            title="Unlimited Namespaces"
+            subtitle="Split and manage your cluster(s) as you wish with multiple namespaces." />
+          <PricingListItem
+            title="Unlimited Clusters"
+            subtitle="Use Kubernetic to manage one, five or thousands of clusters." />
+          <PricingListItem
+            title="Helm integration"
+            subtitle="Use Kubernetic to manage helm charts and releases." />
         </ul>
       </div>
-    </section>
-  );
-}
-
-function DesktopPricing() {
-  const [licenses, updateLicenses] = React.useState(1)
-
-  async function handleClick(licenses: number) {
-    const stripe = await getStripe()
-    let code = await licenseServer.createSession(licenses)
-    await stripe!.redirectToCheckout({
-      sessionId: code.id
-    })
-  }
-
-  return (
-    <li>
-      <div className="pricing-plan _most-popular">
-        <div className="pricing-plan-popular _has-text">Most Popular</div>
-        <div className="pricing-plan-name">Desktop Edition</div>
-        <div className="pricing-plan-price">
-          <strong><s style={{ color: "#a6a6a6" }}>€60</s></strong><br />
-          <strong>€30</strong>
-          <br /><br /><small>one time fee</small>
-        </div>
-        <div className="pricing-plan-includes">
-          <div className="pricing-plan-additional">Includes</div>
-          <div className="pricing-plan-features">
-            <p>1 user</p>
-            <p>unlimited app updates</p>
-            <p>multi-OS license</p>
-            <p>
-              <strong>unlimited</strong> clusters
-          </p>
-            <p>
-              <strong>unlimited</strong> namespaces
-            </p>
-          </div>
-        </div>
-        <FormGroup>
-          <Divider hidden />
-          <label>Licenses</label>
-          <Form.Input
-            width={2}
-            min={1}
-            defaultValue={1}
-            type="number"
-            onChange={e => updateLicenses(Number(e.target.value))}
-          />
-          <Divider hidden />
-        </FormGroup>
-        <Button onClick={() => handleClick(licenses)} className="btn btn-big">
-          Buy Now
-      </Button>
+      <div className="py-6 px-10">
+        <PricingButton to="/payment/checkout" title="Buy a Personal License"/>
       </div>
-    </li>
+    </div>
   )
 }
 
-function EnterprisePricing() {
-  const [licenses, updateLicenses] = React.useState(1)
-
-  async function handleClick(licenses: number) {
-    const stripe = await getStripe()
-    let code = await licenseServer.createSession(licenses)
-    await stripe!.redirectToCheckout({
-      sessionId: code.id
-    })
-  }
-
+/**
+ * Pricing column for Enterprise License.
+ */
+function PricingColumnTeam() {
   return (
-    <li>
-      <div className="pricing-plan">
-        <div className="pricing-plan-name">Enterprise Edition</div>
-        <div className="pricing-plan-price">
-          <strong>€34</strong><small>/ mo</small>
-          <br /><br /><small>per user</small>
-        </div>
-        <div className="pricing-plan-includes">
-          <div className="pricing-plan-additional">Includes</div>
-          <div className="pricing-plan-features">
-            <p>On premise</p>
-            <p>Single Sign-On</p>
-            <p>multiple users</p>
-            <p>Operators integration</p>
-            <p>ArgoCD integration</p>
-            <p>Tekton integration</p>
-            <p>
-              <strong>unlimited</strong> clusters
-            </p>
-            <p>
-              <strong>unlimited</strong> namespaces
-            </p>
-          </div>
-        </div>
-        <Divider hidden />
-        <Link href="/enterprise/trial">
-          <Button primary className="btn btn-big">
-            Try Enterprise for Free
-        </Button>
-        </Link>
+    <div className="flex flex-col bg-white border-2 rounded-lg divide-y divide-gray-300">
+      <PricingHeader title="Kubernetic Enterprise" subtitle="A subscription for the whole team" icon={<GroupIcon />} />
+      <div className="flex-1">
+        <h2 className="p-4 text-left font-bold">
+          <span className="text-3xl">€ 34</span>
+          <span className="text-md pl-2 font-bold">per user, monthly</span>
+        </h2>
+        <ul className="p-4 pl-4 text-left font-bold">
+          <PricingListItem
+            title="On-premise deployment"
+            subtitle="Kubernetic is deployed on-premise as web application." />
+          <PricingListItem
+            title="Single Sign On"
+            subtitle="Support of Single Sign On." />
+          <PricingListItem
+            title="Multiple Users"
+            subtitle="License seats can be assigned to users to grant access for sign-in." />
+          <PricingListItem
+            title="Unlimited Namespaces"
+            subtitle="Split and manage your cluster(s) as you wish with multiple namespaces." />
+          <PricingListItem
+            title="Unlimited Clusters"
+            subtitle="Use Kubernetic to manage one, five or thousands of clusters." />
+          <PricingListItem
+            title="Helm integration"
+            subtitle="Use Kubernetic to manage helm charts and releases." />
+          <PricingListItem
+            title="Operators integration"
+            subtitle="Install and manage day-2 operations of operators to your clusters." />
+          <PricingListItem
+            title="ArgoCD integration"
+            subtitle="Perform GitOps Continuous Delivery (CD) using ArgoCD applications." />
+          <PricingListItem
+            title="TektonCD integration"
+            subtitle="Continuously Build (CI) your apps using TektonCD Pipelines." />
+        </ul>
       </div>
-    </li>
+      <div className="py-6 px-10">
+        <PricingButton to="/enterprise/trial" title="Start a 30-day trial" />
+      </div>
+    </div>
   )
+}
+
+/**
+ * Header on a Pricing table column.
+ * 
+ * @param title The main text.
+ * @param subtitle A subtitle description.
+ * @param icon An descriptive icon to the right side.
+ */
+type PricingHeaderProps = { title: string, subtitle: string, icon: any }
+function PricingHeader({ title, subtitle, icon }: PricingHeaderProps) {
+  return (
+    <div className="flex relative">
+      <div className="w-10/12 text-left px-5 py-10">
+        <h3 className="mt-2 text-xl font-bold sm:leading-tight">{title}</h3>
+        <h3 className="text-lg font-thin sm:leading-tight">{subtitle}</h3>
+      </div>
+      <div className="grid w-2/12 text-blue-500 p-4 content-center">
+        {icon}
+      </div>
+    </div>
+  )
+}
+
+/**
+ * List item on a Pricing table column.
+ *
+ * @param title The main text.
+ * @param subtitle A subtitle description.
+ */
+type PricingListItemProps = { title: string, subtitle: string }
+function PricingListItem({ title, subtitle }: PricingListItemProps) {
+  return (
+    <div className="pb-3">
+      <li className={style.list}>{title}</li>
+      <span className="pl-8 font-thin">{subtitle}</span>
+    </div>
+  )
+}
+
+/**
+ * Pricing button on a Pricing table column.
+ * 
+ * Button is stretched to fit screen.
+ * 
+ * TODO: analytics label and to link.
+ * 
+ * @param title The main text.
+ */
+type PricingButtonProps = { to: string, title: string }
+function PricingButton({ to, title }: PricingButtonProps) {
+  return (
+    <Link href={to}>
+    <a className="btn btn-blue btn-popup inline-flex rounded py-3 w-full">
+      <span>{title}</span>
+    </a>
+  </Link>
+)
 }
