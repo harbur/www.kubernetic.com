@@ -23,7 +23,7 @@ export default function PricingTable() {
             <PricingColumnIndividual />
             <PricingColumnTeam />
           </div>
-          <div className="text-center italic font-light text-gray-700 text-sm pb-10">Prices listed in <span aria-label="Euro" data-balloon-pos="up" className="border-b border-gray-500 border-dotted">EUR</span>. Taxes may apply. By using Kubernetic you agree to our <a target="_blank" href="https://harbur.io/privacy" className="border-b border-gray-500 border-dotted">terms and policies</a>.</div>
+          <div className="text-center italic font-light text-gray-700 text-sm pb-10">Prices listed in <span aria-label="Euro" data-balloon-pos="up" className="border-b border-gray-500 border-dotted">EUR</span>. Taxes may apply. By using Kubernetic you agree to our <a rel="noopener" target="_blank" href="https://harbur.io/privacy" className="border-b border-gray-500 border-dotted">terms and policies</a>.</div>
         </div>
       </div >
     </>
@@ -64,7 +64,7 @@ function PricingColumnIndividual() {
         </ul>
       </div>
       <div className="py-6 px-10">
-        <PricingButton to="/payment/checkout" title="Buy a Personal License"/>
+        <PricingButton to="/payment/checkout" title="Buy a Personal License" />
       </div>
     </div>
   )
@@ -150,10 +150,9 @@ function PricingHeader({ title, subtitle, icon }: PricingHeaderProps) {
 type PricingListItemProps = { title: string, subtitle: string }
 function PricingListItem({ title, subtitle }: PricingListItemProps) {
   return (
-    <div className="pb-3">
-      <li className={style.list}>{title}</li>
-      <span className="pl-8 font-thin">{subtitle}</span>
-    </div>
+    <li className={style.list}>{title}<br />
+      <span className="font-thin">{subtitle}</span>
+    </li>
   )
 }
 
@@ -170,9 +169,9 @@ type PricingButtonProps = { to: string, title: string }
 function PricingButton({ to, title }: PricingButtonProps) {
   return (
     <Link href={to}>
-    <a className="btn btn-blue btn-popup inline-flex rounded py-3 w-full">
-      <span>{title}</span>
-    </a>
-  </Link>
-)
+      <a className="btn btn-blue btn-popup inline-flex rounded py-3 w-full">
+        <span>{title}</span>
+      </a>
+    </Link>
+  )
 }

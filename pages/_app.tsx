@@ -3,8 +3,8 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 import 'balloon-css';
 import React from 'react';
-import 'semantic-ui-css/semantic.min.css';
 import '../styles/index.css';
+import '../styles/semantic.css';
 
 library.add(fas, fab);
 

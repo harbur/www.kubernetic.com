@@ -17,7 +17,7 @@ export default function DownloadButton() {
                 <span>Download for Mac</span>
               </button>
             </OutboundLink>
-            <button className="btn btn-green inline-flex transition rounded-r ease-in-out duration-150 px-3 py-3"
+            <button aria-label="choose-os" className="btn btn-green inline-flex transition rounded-r ease-in-out duration-150 px-3 py-3"
               onClick={() => updateIsOpen(!isOpen)}>
               <DropdownIcon />
             </button>

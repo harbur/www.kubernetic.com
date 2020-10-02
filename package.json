@@ -30,7 +30,6 @@
     "react-https-redirect": "^1.1.0",
     "react-markdown": "^4.3.1",
     "remark": "^12.0.1",
-    "semantic-ui-css": "^2.4.1",
     "semantic-ui-react": "^1.2.1",
     "strip-markdown": "^3.1.2",
     "stripe": "8.95.0"

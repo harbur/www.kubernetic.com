@@ -17,8 +17,8 @@ export default function Layout({ children, title }: LayoutProps) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>Kubernetic - {title}</title>
 
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-        <meta http-equiv="Content-Language" content="en" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <meta httpEquiv="Content-Language" content="en" />
         <meta name="google-site-verification" content="" />
 
         <link rel="icon" href="favicon.ico" type="image/x-icon" />
@@ -35,7 +35,6 @@ export default function Layout({ children, title }: LayoutProps) {
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="mobile-web-app-capable" content="yes" />
 
-        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
         <meta name="HandheldFriendly" content="True" />
         <meta name="MobileOptimized" content="320" />
         <meta name="description" content="Kubernetic is a brand new Desktop Client for Kubernetes that lets developers and ops manage their Kubernetes cluster(s) through a UI interface in a very simple way." />

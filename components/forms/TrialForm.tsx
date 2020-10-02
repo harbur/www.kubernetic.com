@@ -15,33 +15,54 @@ const expectedUsersOptions = [
 export default function TrialForm() {
   const [terms, updateTerms] = useState(false)
   const [gdpr, updateGDPR] = useState(false)
-  const [expectedUsers, updateExpectedUsers] = useState<number>()
-  const [enabled, updateEnabled] = useState(true)
-
-  useEffect(() => {
-    updateEnabled(terms && expectedUsers !== undefined)
-  }, [terms, gdpr, expectedUsers])
+  const [expectedUsers, updateExpectedUsers] = useState<string>()
 
   return (
-    <Segment color="blue" style={{ textAlign: "left", paddingLeft: "30px", paddingRight: "30px", paddingTop: "30px" }}>
-      <Header>Get Started with Kubernetic Enterprise in minutes</Header>
-      <HeaderSubHeader>After signing up, we will send you a trial license which will be active for 30 days with seats for 3 users. Once you get your license you can follow the installation process in <Link href="https://docs.kubernetic.com/#/installation/enterprise"><a>our guide</a></Link>.</HeaderSubHeader>
-      <Divider hidden />
-      <form className="pt-4 ui form" name="enterprise-trial" method="POST" aria-disabled={true} data-netlify="true">
-        <Header size="tiny">Trial Details</Header>
+    <div className="p-10 text-left border shadow-xl rounded-lg border-blue-500">
+      <h3>Get Started with Kubernetic Enterprise in minutes</h3>
+
+      <p className="pt-5 pb-5 font-thin">After signing up, we will send you a trial license which will be active for 30 days with seats for 3 users. Once you get your license you can follow the installation process in <Link href="https://docs.kubernetic.com/#/installation/enterprise"><a>our guide</a></Link>.</p>
+      <form name="enterprise-trial" method="POST" aria-disabled={true} data-netlify="true">
+        <h6 className="pt-4 pb-2 underline">Trial Details</h6>
         <FormInput label="Your Name" required type="text" name="name" id="name" />
         <FormInput label="Company Email" required type="email" name="email" id="email" />
         <FormInput label="Job Title" required type="text" name="job-title" id="job-title" />
-        <Header size="tiny">Organization</Header>
+        <h6 className="pt-4 pb-2 underline">Organization</h6>
         <FormInput label="Country" required type="text" name="country" id="country" />
-        <FormDropdown selection placeholder="" options={expectedUsersOptions} value={expectedUsers} onChange={(e, { value }) => updateExpectedUsers(value as number)} label="Expected Users" required name="expected-users" id="expected-users" />
+        <div className="inline-block relative w-full required field">
+          <label>Expected Users</label>
+          <div className="relative">
+            <select className="block appearance-none w-full bg-white border hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:border focus:border-blue-400" name="expected-users" id="expected-users" onChange={(e) => updateExpectedUsers(e.currentTarget.value)}>
+              <option value="1">1</option>
+              <option value="5">5</option>
+              <option value="10">10</option>
+              <option value="20">20</option>
+              <option value="50">50</option>
+              <option value="100+">100+</option>
+            </select>
+            <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2">
+              <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" /></svg>
+            </div>
+          </div>
+
+        </div>
+
         <FormInput label="Phone" name="phone" id="phone" />
         <Divider hidden />
-        <FormCheckbox checked={gdpr} onChange={() => updateGDPR(!gdpr)} label={<label>I agree to receive Harbur marketing communications via email. I can always update my preferences later.</label>} name="gdpr" id="gdpr" />
-        <FormCheckbox required checked={terms} onChange={() => updateTerms(!terms)} label={<label>I agree to the Harbur <Link href="https://harbur.io/privacy/index.html"><a>Terms of Use & Privacy Policy</a></Link>.</label>} name="terms" id="terms" />
+
+        <label className="block pt-4">
+          <input name="gdpr" id="gdpr" type="checkbox" checked={gdpr} onChange={() => updateGDPR(!gdpr)} />
+          <span className="pl-3 italic text-sm">I agree to receive Harbur marketing communications via email. I can always update my preferences later.</span>
+        </label>
+
+        <label className="block pt-4">
+          <input name="terms" id="terms" type="checkbox" checked={terms} onChange={() => updateTerms(!terms)} />
+          <span className="pl-3 italic text-sm">I agree to the Harbur <Link href="https://harbur.io/privacy/index.html"><a rel="noopener" target="_blank" className="border-b border-gray-500 border-dotted">Terms of Use & Privacy Policy</a></Link>.</span>
+        </label>
+
         <Input type="hidden" name="form-name" value="enterprise-trial" />
-        <button className={`btn btn-green btn-popup inline-flex rounded py-3 w-full ${!enabled ? "opacity-50" : ""}`} type="submit" disabled={!enabled}>Create Trial</button>
+        <button className={`btn btn-green btn-popup mt-6 inline-flex rounded py-3 w-full ${!terms ? "opacity-50" : ""}`} type="submit" disabled={!terms}>Create Trial</button>
       </form>
-    </Segment>
+    </div>
   )
 }
