@@ -17,7 +17,7 @@ export default function Checkout() {
   }
 
   return (
-    <Layout>
+    <Layout title="Payment Checkout">
       <HeaderSolid />
       <div className="pt-40 pb-10">
         <Form>

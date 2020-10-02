@@ -15,7 +15,7 @@ import React from "react";
 
 export const Index = ({ posts, title, description, ...props }: any) => {
   return (
-    <Layout>
+    <Layout title="The Kubernetes Desktop Client">
       <Header />
       <HeroBanner />
       <BirdsEye />
