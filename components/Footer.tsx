@@ -1,19 +1,16 @@
 import React from "react"
+import { HeartIcon } from "./Icons"
 
 export default function Footer() {
   return (
-    <footer className="footer">
-      <div className="wrap-wide">
-        <div className="footer-love">
-          © <a href="https://harbur.io">Harbur Cloud Solutions</a>, 2020. Built
-          with love{" "}
-          <i className="fa fa-heart"></i>
-          <p />
-          <a className="footer-link" href="https://harbur.io/privacy">
-            Privacy Policy
-          </a>
+    <div className="container border-t border-gray-300 border-dashed p-8 pb-6 md:pb-10">
+      <div className="text-center italic text-xs text-gray-600">
+        <div className="inline-flex">© <a target="_blank" className="dotted" href="https://harbur.io">Harbur Cloud Solutions</a>, 2020. Made with <HeartIcon />
         </div>
       </div>
-    </footer>
+      <div className="text-center italic text-xs text-gray-600">
+        <a target="_blank" className="border-b border-gray-500 border-dotted" href="https://harbur.io/privacy">Privacy Policy</a>
+      </div>
+    </div>
   )
 }
