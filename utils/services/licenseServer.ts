@@ -1,12 +1,16 @@
-async function createSession(licenses: number) {
-  // TODO: URL should be parametrized to send requests on PRO or BETA environment
-  let response = await fetch(`https://kubernetic-license-server-pro.pro.harbur.io/api/session`, {
+async function createSession(licenses: number, taxID: string, country: string) {
+  let response = await fetch(`${process.env.NEXT_PUBLIC_LICENSESERVER_URL}/api/session` as string, {
     method: "post",
     body: JSON.stringify({
       licenses,
+      taxID,
+      country,
     })
   })
+  if (!response.ok) {
+    throw await response.json()
+  }
   return await response.json()
 }
 
-export default {createSession}
+export default { createSession }

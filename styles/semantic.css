@@ -12,6 +12,16 @@
   @apply outline-none border border-blue-400;
 }
 
+/* Error Input */
+.error .ui.input input {
+  @apply border rounded border-red-500;
+}
+
+/* Error Message */
+.ui.pointing.above.prompt.label {
+  @apply text-xs italic font-thin text-right;
+}
+
 /* Dropdown Field */
 .ui.selection.dropdown {
   @apply appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight;
