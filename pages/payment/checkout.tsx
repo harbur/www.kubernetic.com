@@ -29,6 +29,7 @@ export default function Checkout() {
   // Calculate showTaxID
   useEffect(() => {
     updateShowTaxID(isEuropeanCountry(country))
+    updateTaxID("")
   }, [country])
 
   // Calculate Subtotal
@@ -116,6 +117,7 @@ function TaxIDField({ value, onChange }: { value: string, onChange(value: string
     <div className="block pb-8 pt-2">
       <Form.Input
         className="float-right w-40"
+        value={value}
         onChange={e => onChange(e.currentTarget.value)}
         error={validateTaxID}
       />
@@ -393,8 +395,8 @@ function LicensesField({ value, onChange }: { value: number, onChange(value: num
         size="mini"
         className="float-right w-40"
         min={1}
-        defaultValue={1}
         type="number"
+        value={value}
         onChange={e => onChange(Math.abs(Number((e.target.value))))}
       />
 
