@@ -14,12 +14,22 @@ export default function Checkout() {
   const [taxPercent, updateTaxPercent] = useState(21)
   const [tax, updateTax] = useState<number>(0)
   const [total, updateTotal] = useState<number>(0)
+  const [showTaxID, updateShowTaxID] = useState(false)
 
   async function handleClick() {
     const stripe = await getStripe()
-    let code = await licenseServer.createSession(licenses, taxID, country)
+    var code: any
+    if (!isEuropeanCountry(country)) {
+      code = await licenseServer.createSession(licenses, "", country)
+    }
+    code = await licenseServer.createSession(licenses, taxID, country)
     await stripe!.redirectToCheckout({ sessionId: code.id })
   }
+
+  // Calculate showTaxID
+  useEffect(() => {
+    updateShowTaxID(isEuropeanCountry(country))
+  }, [country])
 
   // Calculate Subtotal
   useEffect(() => {
@@ -76,7 +86,7 @@ export default function Checkout() {
             <div className="block p-4">
               <SubtotalSum licenses={licenses} />
               <TaxSum taxPercent={taxPercent} tax={tax} />
-              <TaxIDField value={taxID} onChange={updateTaxID} />
+              {showTaxID && <TaxIDField value={taxID} onChange={updateTaxID} />}
               <TotalSum total={total} />
             </div>
             <div className="pt-20 pb-20">
@@ -419,4 +429,38 @@ function TotalSum({ total }: { total: number }) {
       <h4 className="italic">Total</h4>
     </div>
   )
+}
+
+function isEuropeanCountry(country: string): boolean {
+  switch (country) {
+    case "Austria":
+    case "Belgium":
+    case "Bulgaria":
+    case "Croatia":
+    case "Cyprus":
+    case "Czech Republic":
+    case "Denmark":
+    case "Estonia":
+    case "Finland":
+    case "France":
+    case "Germany":
+    case "Greece":
+    case "Hungary":
+    case "Ireland":
+    case "Italy":
+    case "Latvia":
+    case "Lithuania":
+    case "Luxembourg":
+    case "Malta":
+    case "Netherlands":
+    case "Poland":
+    case "Portugal":
+    case "Romania":
+    case "Slovakia":
+    case "Slovenia":
+    case "Spain":
+    case "Sweden":
+      return true;
+  }
+  return false
 }
