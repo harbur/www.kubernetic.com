@@ -17,6 +17,7 @@ export default function Checkout() {
   const [showTaxID, updateShowTaxID] = useState(false)
 
   async function handleClick() {
+    if (invalidTaxID !== "") return
     const stripe = await getStripe()
     var code: any
     if (!isEuropeanCountry(country)) {
@@ -39,15 +40,22 @@ export default function Checkout() {
 
   // Calculate TaxPercent
   useEffect(() => {
+    // On Spain Tax is not excluded, so we collect 21%
     if (country === "Spain") {
       updateTaxPercent(21)
       return
     }
+    // For personal Licenses (without TAX ID), we collect 21%
     if (taxID === "") {
       updateTaxPercent(21)
       return
     }
-    updateTaxPercent(0)
+    // For valid TAX IDs, we don't collect, otherwise we collect 21%
+    if (invalidTaxID === "") {
+      updateTaxPercent(0)
+    } else {
+      updateTaxPercent(21)
+    }
   }, [country, taxID])
 
   // Calculate Tax
@@ -59,6 +67,14 @@ export default function Checkout() {
   useEffect(() => {
     updateTotal(subtotal + tax)
   }, [subtotal, tax])
+
+  // Calculate if TaxID is invalid
+  const invalidTaxID = useMemo(() => {
+    if (taxID.length > 0 && taxID.length < 9) {
+      return "This tax ID is invalid."
+    }
+    return ""
+  }, [taxID])
 
   useEffect(() => {
     fetch('https://ipapi.co/json/')
@@ -87,11 +103,11 @@ export default function Checkout() {
             <div className="block p-4">
               <SubtotalSum licenses={licenses} />
               <TaxSum taxPercent={taxPercent} tax={tax} />
-              {showTaxID && <TaxIDField value={taxID} onChange={updateTaxID} />}
+              {showTaxID && <TaxIDField value={taxID} onChange={updateTaxID} invalidTaxID={invalidTaxID} />}
               <TotalSum total={total} />
             </div>
             <div className="pt-20 pb-20">
-              <button className="btn btn-blue btn-popup float-right rounded py-3 px-8" onClick={handleClick} >
+              <button className={`btn btn-blue btn-popup float-right rounded py-3 px-8 ${invalidTaxID !== "" ? "opacity-50" : ""}`} disabled={invalidTaxID !== ""} onClick={handleClick} >
                 Next
             </button>
             </div>
@@ -107,19 +123,14 @@ export default function Checkout() {
   )
 }
 
-function TaxIDField({ value, onChange }: { value: string, onChange(value: string): void }) {
-  const validateTaxID = useMemo(() => {
-    if (value.length > 0 && value.length < 9) {
-      return "This tax ID is invalid."
-    }
-  }, [value])
+function TaxIDField({ value, onChange, invalidTaxID }: { value: string, onChange(value: string): void, invalidTaxID: string }) {
   return (
     <div className="block pb-8 pt-2">
       <Form.Input
         className="float-right w-40"
         value={value}
         onChange={e => onChange(e.currentTarget.value)}
-        error={validateTaxID}
+        error={invalidTaxID}
       />
 
       <div className="flex-grow pt-2" >VAT ID <span data-balloon-length="large" aria-label="The VAT ID is only relevant for corporate customers within the EU.  The VAT ID consists of two letters identifying the country (ES), and the country-specific number of digits. Enter your VAT ID in accordance with your country-specific format. If this does not apply to you, or you are an individual, leave the VAT ID field empty." data-balloon-pos="up" className="bg-gray-200 rounded text-gray-700"> &nbsp;?&nbsp;</span></div>

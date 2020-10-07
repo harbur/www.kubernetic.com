@@ -44,7 +44,7 @@ export default function Layout({ children, title }: LayoutProps) {
         <meta name="twitter:url" content="https://kubernetic.com/" />
         <meta name="twitter:title" content="Kubernetic - The Kubernetes Desktop Client" />
         <meta name="twitter:description" content="Kubernetic is a brand new Desktop Client for Kubernetes that lets developers and ops manage their Kubernetes cluster(s) through a UI interface in a very simple way." />
-        <meta name="twitter:image" content="https://kubernetic.com/images/og-image.png" />
+        <meta name="twitter:image" content="https://kubernetic.com/images/og-image.webp" />
         <meta name="twitter:image:width" content="600" />
         <meta name="twitter:image:height" content="315" />
         <meta name="twitter:site" content="@harburio" />
@@ -54,7 +54,7 @@ export default function Layout({ children, title }: LayoutProps) {
         <meta property="og:title" content="Kubernetic - The Kubernetes Desktop Client" />
         <meta property="og:description" content="Kubernetic is a brand new Desktop Client for Kubernetes that lets developers and ops manage their Kubernetes cluster(s) through a UI interface in a very simple way." />
         <meta property="og:url" content="https://www.kubernetic.com" />
-        <meta property="og:image" content="https://kubernetic.com/images/og-image.png" />
+        <meta property="og:image" content="https://kubernetic.com/images/og-image.webp" />
         <meta property="og:image:width" content="600" />
         <meta property="og:image:height" content="315" />
 

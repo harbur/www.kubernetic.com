@@ -70,7 +70,7 @@ function Logo() {
   return (
     <Link href="/">
       <a className="flex">
-        <img className="h-8 w-auto" src="/images/kubernetic.png" alt="Kubernetic" />
+        <img className="h-8 w-auto" src="/images/kubernetic.webp" alt="Kubernetic" />
       </a>
     </Link>
   )
