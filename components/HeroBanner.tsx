@@ -1,4 +1,4 @@
-import DownloadButton from "./DownloadButton"
+import CTAButton from "./CTAButton"
 
 export default function HeroBanner() {
   return (
@@ -8,7 +8,7 @@ export default function HeroBanner() {
           <h3 className="mt-2 pt-40 text-3xl font-light text-white sm:text-5xl lg:text-6xl sm:leading-tight">The Kubernetes Desktop Client</h3>
           <p className="mt-4 pt-6 max-w-2xl text-2xl leading-7 text-white lg:mx-auto">Cluster management, simplified.</p>
           <div className="pt-16">
-            <DownloadButton />
+            <CTAButton />
           </div>
         </div>
       </div>

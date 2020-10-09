@@ -2,7 +2,7 @@ import { useState } from "react"
 import { OutboundLink } from "react-ga"
 import { AppleIcon, DropdownIcon, LinuxIcon, WinIcon } from "./Icons"
 
-export default function DownloadButton() {
+export default function CTAButton() {
   const [isOpen, updateIsOpen] = useState(false)
   return (
     <>
