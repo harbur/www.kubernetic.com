@@ -1,8 +1,5 @@
 import Link from "next/link";
-import { OutboundLink } from "react-ga";
-import { Divider, Form, FormGroup } from "semantic-ui-react";
-import { GroupIcon, UserIcon } from "./Icons";
-import style from './PricingTable.module.css';
+import { CheckboxIcon, GroupIcon, UserIcon } from "./Icons";
 
 /**
  * Pricing Table section.
@@ -150,7 +147,8 @@ function PricingHeader({ title, subtitle, icon }: PricingHeaderProps) {
 type PricingListItemProps = { title: string, subtitle: string }
 function PricingListItem({ title, subtitle }: PricingListItemProps) {
   return (
-    <li className={style.list}>{title}<br />
+    <li className="pb-3 pl-8 relative">
+      <CheckboxIcon /> {title}<br />
       <span className="font-thin">{subtitle}</span>
     </li>
   )
