@@ -12,7 +12,7 @@ export default function Header() {
           <div className="hidden sm:flex items-center justify-end space-x-8 ">
             <HeaderLink to="#pricing" title="Pricing" />
             <HeaderLink to="//docs.kubernetic.com" title="Docs" />
-            <HeaderLink to="//docs.kubernetic.com/#/tutorials/" title="Tutorials" />
+            <HeaderLink to="//docs.kubernetic.com/tutorials/" title="Tutorials" />
             <HeaderButton to="/enterprise/trial" title="Try Enterprise" />
           </div>
         </div>
@@ -32,7 +32,7 @@ export function HeaderSolid() {
           <div className="hidden sm:flex items-center justify-end space-x-8 ">
             <HeaderLink to="#pricing" title="Pricing" />
             <HeaderLink to="//docs.kubernetic.com" title="Docs" />
-            <HeaderLink to="//docs.kubernetic.com/#/tutorials/" title="Tutorials" />
+            <HeaderLink to="//docs.kubernetic.com/tutorials/" title="Tutorials" />
             <HeaderButton to="/enterprise/trial" title="Try Enterprise" />
           </div>
         </div>
