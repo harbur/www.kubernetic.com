@@ -6,7 +6,7 @@ import React from "react";
 
 export default function Trial() {
   return (
-    <Layout title="Enterprise Trial">
+    <Layout title="Team Trial">
       <HeaderSolid />
       <div className="pt-40 pb-10">
         <div className="px-10 md:px-56 text-center">

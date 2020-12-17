@@ -4,7 +4,7 @@ import { CheckboxIcon, GroupIcon, UserIcon } from "./Icons";
 /**
  * Pricing Table section.
  * 
- * Section is in gray background, contains a table with two columns, for desktop and enterprise pricing.
+ * Section is in gray background, contains a table with two columns, for desktop and team pricing.
  * 
  * It has a footer with legal details (EUR contains a tooltip, terms-and-policies redirect to policy)
  */
@@ -68,12 +68,12 @@ function PricingColumnIndividual() {
 }
 
 /**
- * Pricing column for Enterprise License.
+ * Pricing column for Team License.
  */
 function PricingColumnTeam() {
   return (
     <div className="flex flex-col bg-white border-2 rounded-lg divide-y divide-gray-300">
-      <PricingHeader title="Kubernetic Enterprise" subtitle="A subscription for the whole team" icon={<GroupIcon />} />
+      <PricingHeader title="Kubernetic Team" subtitle="A subscription for the whole team" icon={<GroupIcon />} />
       <div className="flex-1">
         <h2 className="p-4 text-left font-bold">
           <span className="text-3xl">€ 34</span>
@@ -110,7 +110,7 @@ function PricingColumnTeam() {
         </ul>
       </div>
       <div className="py-6 px-10">
-        <PricingButton to="/enterprise/trial" title="Start a 30-day trial" />
+        <PricingButton to="/team/trial" title="Start a 30-day trial" />
       </div>
     </div>
   )
