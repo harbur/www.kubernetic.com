@@ -129,7 +129,7 @@ function PricingHeader({ title, subtitle, icon }: PricingHeaderProps) {
     <div className="flex relative">
       <div className="w-10/12 text-left px-5 py-10">
         <h3 className="mt-2 text-xl font-bold sm:leading-tight">{title}</h3>
-        <h3 className="text-lg font-thin sm:leading-tight">{subtitle}</h3>
+        <h3 className="text-lg font-extralight sm:leading-tight">{subtitle}</h3>
       </div>
       <div className="grid w-2/12 text-blue-500 p-4 content-center">
         {icon}
@@ -149,7 +149,7 @@ function PricingListItem({ title, subtitle }: PricingListItemProps) {
   return (
     <li className="pb-3 pl-8 relative">
       <CheckboxIcon /> {title}<br />
-      <span className="font-thin">{subtitle}</span>
+      <span className="font-extralight">{subtitle}</span>
     </li>
   )
 }

@@ -9,10 +9,10 @@
 
 /* Button */
 .btn {
-  @apply whitespace-no-wrap text-base font-medium items-center justify-center cursor-pointer;
+  @apply whitespace-nowrap text-base font-medium items-center justify-center cursor-pointer;
 }
 .btn:focus {
-  @apply outline-none shadow-outline;
+  @apply outline-none ring;
 }
 .btn:hover {
   @apply shadow-lg;

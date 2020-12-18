@@ -19,7 +19,7 @@
 
 /* Error Message */
 .ui.pointing.above.prompt.label {
-  @apply text-xs italic font-thin text-right;
+  @apply text-xs italic font-extralight text-right;
 }
 
 /* Dropdown Field */

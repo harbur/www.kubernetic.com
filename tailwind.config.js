@@ -1,10 +1,6 @@
 module.exports = {
-  future: {
-    removeDeprecatedGapUtilities: true,
-    purgeLayersByDefault: true,
-  },
   purge: {
-    content: ['./pages/**/*.tsx', './components/**/*.tsx'],
+    content: ['./pages/**/*.tsx', './components/**/*.tsx', './pages/**/*.jsx', './components/**/*.jsx'],
   },
   theme: {
     extend: {},
@@ -13,5 +9,7 @@ module.exports = {
     margin: ['responsive', 'last'],
     margin: ['responsive', 'hover'],
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

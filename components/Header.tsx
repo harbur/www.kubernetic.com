@@ -13,6 +13,7 @@ export default function Header() {
             <HeaderLink to="#pricing" title="Pricing" />
             <HeaderLink to="//docs.kubernetic.com" title="Docs" />
             <HeaderLink to="//docs.kubernetic.com/tutorials/" title="Tutorials" />
+            <HeaderLink to="/blog" title="Blog" />
             <HeaderButton to="/team/trial" title="Try Team" />
           </div>
         </div>
@@ -23,7 +24,7 @@ export default function Header() {
 
 export function HeaderSolid() {
   return (
-    <div className="bg-blue-600 absolute top-0 inset-x-0 z-100 h-30 items-center hideout background">
+    <div className="bg-blue-500 absolute top-0 inset-x-0 z-100 h-30 items-center hideout background">
       <div className="max-w-7xl mx-auto px-6 sm:px-20">
         <div className="flex py-8">
           <div className="w-0 flex-1">
@@ -33,6 +34,7 @@ export function HeaderSolid() {
             <HeaderLink to="#pricing" title="Pricing" />
             <HeaderLink to="//docs.kubernetic.com" title="Docs" />
             <HeaderLink to="//docs.kubernetic.com/tutorials/" title="Tutorials" />
+            <HeaderLink to="/blog" title="Blog" />
             <HeaderButton to="/team/trial" title="Try Team" />
           </div>
         </div>
@@ -58,7 +60,7 @@ function HeaderLink({ to, title }: HeaderLinkProps) {
   return (
     <span className="inline-flex">
       <Link href={to}>
-        <a className="whitespace-no-wrap text-base leading-6 font-medium text-white hover:underline hover:text-white focus:outline-none focus:text-white">
+        <a className="whitespace-nowrap text-base leading-6 font-medium text-white hover:underline hover:text-white focus:outline-none focus:text-white">
           {title}
         </a>
       </Link>

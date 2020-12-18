@@ -10,10 +10,9 @@ import Header from '@components/Header';
 import HeroBanner from '@components/HeroBanner';
 import Layout from '@components/layouts/Layout';
 import PricingTable from '@components/PricingTable';
-import matter from 'gray-matter';
 import React from "react";
 
-export const Index = ({ posts, title, description, ...props }: any) => {
+export const Index = () => {
   return (
     <Layout title="The Kubernetes Desktop Client">
       <Header />
@@ -35,32 +34,3 @@ export const Index = ({ posts, title, description, ...props }: any) => {
 }
 
 export default Index
-
-export async function getStaticProps() {
-  const configData = await import(`../siteconfig.json`)
-
-  const posts = ((context) => {
-    const keys = context.keys()
-    const values = keys.map(context)
-
-    const data = keys.map((key: any, index: any) => {
-      let slug = key.replace(/^.*[\\\/]/, '').slice(0, -3)
-      const value: any = values[index]
-      const document = matter(value.default)
-      return {
-        frontmatter: document.data,
-        markdownBody: document.content,
-        slug,
-      }
-    })
-    return data
-  })(require.context('../posts', true, /\.md$/))
-
-  return {
-    props: {
-      posts,
-      title: configData.default.title,
-      description: configData.default.description,
-    },
-  }
-}
