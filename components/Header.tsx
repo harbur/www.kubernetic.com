@@ -10,7 +10,7 @@ export default function Header() {
             <Logo />
           </div>
           <div className="hidden sm:flex items-center justify-end space-x-8 ">
-            <HeaderLink to="#pricing" title="Pricing" />
+            <HeaderLink to="/#pricing" title="Pricing" />
             <HeaderLink to="//docs.kubernetic.com" title="Docs" />
             <HeaderLink to="//docs.kubernetic.com/tutorials/" title="Tutorials" />
             <HeaderLink to="/blog" title="Blog" />
@@ -31,7 +31,7 @@ export function HeaderSolid() {
             <Logo />
           </div>
           <div className="hidden sm:flex items-center justify-end space-x-8 ">
-            <HeaderLink to="#pricing" title="Pricing" />
+            <HeaderLink to="/#pricing" title="Pricing" />
             <HeaderLink to="//docs.kubernetic.com" title="Docs" />
             <HeaderLink to="//docs.kubernetic.com/tutorials/" title="Tutorials" />
             <HeaderLink to="/blog" title="Blog" />
