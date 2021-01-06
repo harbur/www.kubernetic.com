@@ -17,7 +17,7 @@ export default BlogLayout
 
 This is the first of our series of community posts where we introduce and analyze different projects around Kubernetes and how they can be used to leverage our setup.
 
-In this post we'll introduce ArgoCD in order to manage our application running on Kubernetes using GitOps.
+In this post we'll introduce ArgoCD in order to manage our application running on Kubernetes using GitOps, by following a step-by-step tutorial.
 
 ## What is GitOps
 
@@ -35,22 +35,23 @@ In order to streamline any code changes from a git repository to our cluster, we
 
 [Tekton]: https://tekton.dev/
 
-# Preparation
+# Tutorial Overview
 
 Before diving with the tutorial steps let's see what we'll be building first:
 
-**Infra**: We can use any ***Kubernetes*** cluster to run our components, we'll setup a [kind] cluster which
+**Infrastructure**: We can use any ***Kubernetes*** cluster to run our components, we'll setup a [kind] cluster which
 only depends on having docker installed on your machine. The installation of ***ArgoCD*** itself will be managed by
 ***Operator Lifecycle Manager***, which we'll add it as an addon to the cluster.
 
-**MovieCatalog**: As an example we'll be deploying an app which consists of two components:
+**MovieCatalog**: As an example we'll be deploying angs app which consists of two components:
 
-- a backend in written Go.
-- a frontend written in React.
+- a [backend] in written Go.
+- a [frontend] written in React.
+
+[backend]: https://github.com/harbur/golang-gin-starter
+[frontend]: https://github.com/harbur/react-tailwind-starter
 
 The code of each component exists on each own Git repository, and each repo includes a Helm chart for deployment.
-
-# Tutorial
 
 The tutorial is separated in the following sections:
 
