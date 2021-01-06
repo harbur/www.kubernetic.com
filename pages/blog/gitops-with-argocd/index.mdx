@@ -1,5 +1,5 @@
 import BlogLayout from '../BlogLayout';
-import Banner from './banner.jpg';
+import Banner from './banner.png';
 import Kind from './kind.png';
 import List from 'components/checkbox/List';
 import Item from 'components/checkbox/Item';
@@ -13,44 +13,51 @@ export default BlogLayout
 
 ## Run GitOps with ArgoCD
 
-In this tutorial we'll prepare a Kubernetes cluster from scratch along with
-ArgoCD to do our Continuous Delivery of our demo application.
+<img src={Banner}/>
+
+This is the first of our series of community posts where we introduce and analyze different projects around Kubernetes and how they can be used to leverage our setup.
+
+In this post we'll introduce ArgoCD in order to manage our application running on Kubernetes using GitOps.
+
+## What is GitOps
+
+GitOps was coined by [WeaveWorks](https://www.weave.works/) and is a workflow that allows you to define your desired state of your system under version control. With GitOps your Git repository is your single source of truth.
+
+## What is ArgoCD
+
+[ArgoCD](https://argoproj.github.io/argo-cd/) is a declarative, GitOps continuous delivery tool for Kubernetes. It runs on your cluster and monitors changes on your git repositories, and applies them to your cluster. ArgoCD along with [Flux](https://www.weave.works/oss/flux/) are the two major solutions for implementing GitOps workflow on your Kubernetes cluster.
+
+## What is Continuous Delivery
+
+Continuous Delivery (CD) is the practice of keeping your software releasable at all times through automation of your different stages of software delivery lifecycle. It is part of more complete automation set of Continous Integration / Continuous Delivery (CI/CD).
+
+In order to streamline any code changes from a git repository to our cluster, we need first to build any container images and then apply the changes to the kubernetes cluster. The **build image** step is part of the **CI**, while the **apply the changes** is part of the **CD**. With ArgoCD we can resolve the CD, while the CI part we'll explain in more detail in a future post using [Tekton].
+
+[Tekton]: https://tekton.dev/
 
 # Preparation
 
 Before diving with the tutorial steps let's see what we'll be building first:
 
-## Our demo app
+**Infra**: We can use any ***Kubernetes*** cluster to run our components, we'll setup a [kind] cluster which
+only depends on having docker installed on your machine. The installation of ***ArgoCD*** itself will be managed by
+***Operator Lifecycle Manager***, which we'll add it as an addon to the cluster.
 
-The demo application that we'll be deploying is a movie catalog service that
-consists of two components:
+**MovieCatalog**: As an example we'll be deploying an app which consists of two components:
 
 - a backend in written Go.
 - a frontend written in React.
 
-The code of each component exists on each own Git repository, and we co-locate
-the deployment resources, in Helm chart format, inside each repo.
-
-## Our infra
-
-We'll be using a Kubernetes cluster to run our components, we can use any
-Kubernetes instance, during tutorial we'll be running a `kind` cluster which
-only depends on having docker installed on your machine. We'll skip the image
-building process of the repositories, instead we'll be consuming the images
-directly from the DockerHub. The installation of ArgoCD we'll be managed by
-Operator Lifecycle Manager, which we'll add it as an addon to the cluster and
-the deployment of the components will be managed by ArgoCD so that any changes
-on the Git repositories will be automatically propagated on Kubernetes.
+The code of each component exists on each own Git repository, and each repo includes a Helm chart for deployment.
 
 # Tutorial
 
 The tutorial is separated in the following sections:
 
 - **Kubernetes Setup**: Preparation of the Kubernetes cluster.
-- **Kubernetic Setup**: Preparation of the Kubernetic Desktop app.
 - **Operator Lifecycle Manager**: Installation of OLM.
 - **ArgoCD**: Installation of ArgoCD.
-- **MovieCatalog**: Installation of MovieCatalog Application.
+- **MovieCatalog**: Installation of MovieCatalog app.
 
 ## Kubernetes Setup
 
