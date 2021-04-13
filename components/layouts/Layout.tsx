@@ -21,8 +21,8 @@ export default function Layout({ children, title }: LayoutProps) {
         <meta httpEquiv="Content-Language" content="en" />
         <meta name="google-site-verification" content="" />
 
-        <link rel="icon" href="favicon.ico" type="image/x-icon" />
-        <link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+        <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
 
         <meta name="apple-mobile-web-app-title" content="Kubernetic" />
         <meta name="application-name" content="Kubernetic" />

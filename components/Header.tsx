@@ -14,7 +14,7 @@ export default function Header() {
             <HeaderLink to="//docs.kubernetic.com" title="Docs" />
             <HeaderLink to="//docs.kubernetic.com/tutorials/" title="Tutorials" />
             <HeaderLink to="/blog" title="Blog" />
-            <HeaderButton to="/team/trial" title="Try Team" />
+            <HeaderButton to="/account" title="Sign in" />
           </div>
         </div>
       </div>
@@ -35,7 +35,7 @@ export function HeaderSolid() {
             <HeaderLink to="//docs.kubernetic.com" title="Docs" />
             <HeaderLink to="//docs.kubernetic.com/tutorials/" title="Tutorials" />
             <HeaderLink to="/blog" title="Blog" />
-            <HeaderButton to="/team/trial" title="Try Team" />
+            <HeaderButton to="/account" title="Sign in" />
           </div>
         </div>
       </div>
