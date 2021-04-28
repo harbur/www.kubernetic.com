@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { useState } from "react";
-import { CheckboxIcon, GroupIcon, UserIcon } from "./Icons";
 
 /**
  * Price update popup.
@@ -13,10 +12,12 @@ export default function PriceUpdate() {
     <>
       {open && (
         <div className="px-5 py-3 bg-black flex">
-          <span className="text-white flex-grow">
-            We're updating our pricing, with limited time 50% discount until 8
-            of May
-          </span>
+          <Link href="/#pricing">
+            <a className="text-white text-center flex-grow">
+              We're updating our pricing, with limited time 50% discount until 8
+              of May.
+            </a>
+          </Link>
           <span onClick={close} className="cursor-pointer text-white">
             x
           </span>
