@@ -11,13 +11,15 @@ export default function PriceUpdate() {
   return (
     <>
       {open && (
-        <div className="px-5 py-3 bg-black flex">
+        <div className="px-5 py-2 md:py-3 bg-black flex text-xs md:text-sm ">
+          <div className="flex-grow" />
           <Link href="/#pricing">
-            <a className="text-white text-center flex-grow">
+            <a className="text-white text-center">
               We're updating our pricing, with limited time 50% discount until 8
               of May.
             </a>
           </Link>
+          <div className="flex-grow"/>
           <span onClick={close} className="cursor-pointer text-white">
             x
           </span>
