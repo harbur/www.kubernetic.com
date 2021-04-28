@@ -6,10 +6,9 @@ export default function Header() {
     <div className="bg-transparent absolute top-0 inset-x-0 z-100 h-20 items-center">
       <div className="max-w-7xl bg-transparent mx-auto px-6 md:px-20">
         <div className="flex py-8">
-          <div className="w-0 flex-1">
-            <Logo />
-          </div>
-          <div className="hidden sm:flex items-center justify-end space-x-8 ">
+          <Logo />
+          <div className="flex-grow"></div>
+          <div className="hidden md:flex items-center justify-end space-x-8 ">
             <HeaderLink to="/#pricing" title="Pricing" />
             <HeaderLink to="//docs.kubernetic.com" title="Docs" />
             <HeaderLink to="//docs.kubernetic.com/tutorials/" title="Tutorials" />
@@ -27,9 +26,7 @@ export function HeaderSolid() {
     <div className="bg-blue-500 absolute top-0 inset-x-0 z-100 h-30 items-center hideout background">
       <div className="max-w-7xl mx-auto px-6 sm:px-20">
         <div className="flex py-8">
-          <div className="w-0 flex-1">
             <Logo />
-          </div>
           <div className="hidden sm:flex items-center justify-end space-x-8 ">
             <HeaderLink to="/#pricing" title="Pricing" />
             <HeaderLink to="//docs.kubernetic.com" title="Docs" />
@@ -71,7 +68,7 @@ function HeaderLink({ to, title }: HeaderLinkProps) {
 function Logo() {
   return (
     <Link href="/">
-      <a className="flex">
+      <a className="px-4 flex-none">
         <img className="h-8 w-auto" src="/images/kubernetic.webp" alt="Kubernetic" />
       </a>
     </Link>
