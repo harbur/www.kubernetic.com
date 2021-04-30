@@ -90,7 +90,7 @@ export default function Checkout() {
       <HeaderSolid />
       <div className="pt-40 pb-10">
         <Form>
-          <div className="pl-20 pr-20 md:pl-64 md:pr-64 divider divide-y">
+          <div className="pl-20 pr-20 md:px-32 lg:px-64 divider divide-y">
             <div>
               <CountryField value={country} onChange={updateCountry} />
               <h4>Your Order</h4>

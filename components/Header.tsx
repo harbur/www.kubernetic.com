@@ -23,11 +23,12 @@ export default function Header() {
 
 export function HeaderSolid() {
   return (
-    <div className="bg-blue-500 absolute top-0 inset-x-0 z-100 h-30 items-center hideout background">
+    <div className="bg-blue-500 absolute top-0 inset-x-0 z-100 h-24 items-center hideout background">
       <div className="max-w-7xl mx-auto px-6 sm:px-20">
         <div className="flex py-8">
             <Logo />
-          <div className="hidden sm:flex items-center justify-end space-x-8 ">
+            <div className="flex-grow"></div>
+          <div className="hidden md:flex items-center justify-end space-x-8 ">
             <HeaderLink to="/#pricing" title="Pricing" />
             <HeaderLink to="//docs.kubernetic.com" title="Docs" />
             <HeaderLink to="//docs.kubernetic.com/tutorials/" title="Tutorials" />
