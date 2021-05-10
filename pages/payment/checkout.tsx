@@ -35,7 +35,7 @@ export default function Checkout() {
 
   // Calculate Subtotal
   useEffect(() => {
-    updateSubtotal(licenses * 30)
+    updateSubtotal(licenses * 60)
   }, [licenses])
 
   // Calculate TaxPercent
@@ -96,7 +96,7 @@ export default function Checkout() {
               <h4>Your Order</h4>
             </div>
             <ul className="p-4">
-              <div className="float-right text-gray-700">€ 30.00</div>
+              <div className="float-right text-gray-700">€ 60.00</div>
               <h5 className="italic">Kubernetic Desktop License</h5>
               <LicensesField value={licenses} onChange={updateLicenses} />
             </ul>
@@ -420,7 +420,7 @@ function LicensesField({ value, onChange }: { value: number, onChange(value: num
 function SubtotalSum({ licenses }: { licenses: number }) {
   return (
     <div className="pt-2">
-      <div className="float-right text-gray-700">€ {licenses * 30}.00</div>
+      <div className="float-right text-gray-700">€ {licenses * 60}.00</div>
       <div className="flex-grow">Subtotal</div>
     </div>
   )

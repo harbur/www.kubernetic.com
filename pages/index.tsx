@@ -9,14 +9,12 @@ import Footer from '@components/Footer';
 import Header from '@components/Header';
 import HeroBanner from '@components/HeroBanner';
 import Layout from '@components/layouts/Layout';
-import PriceUpdate from '@components/PriceUpdate';
 import PricingTable from '@components/PricingTable';
 import React from "react";
 
 export const Index = () => {
   return (
     <Layout title="The Kubernetes Desktop Client">
-      <PriceUpdate />
       <div className="relative"><Header />
       <HeroBanner />
       <BirdsEye />

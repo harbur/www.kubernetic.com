@@ -36,10 +36,7 @@ function PricingColumnIndividual() {
       <PricingHeader title="Kubernetic Desktop" subtitle="A pay-once license, just for you" icon={<UserIcon />} />
       <div className="flex-1">
         <h2 className="p-4 text-left font-bold">
-          <span className="mr-2 text-3xl font-normal text-gray-400" style={{textDecorationLine: 'line-through',  textDecorationStyle: 'solid'}}>
-            € 60
-          </span>
-          <span className="text-3xl">€ 30</span>
+          <span className="text-3xl">€ 60</span>
           <span className="text-md pl-2 font-bold">one-time payment</span>
         </h2>
         <ul className="p-4 pl-4 text-left font-bold">
