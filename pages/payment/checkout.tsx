@@ -15,8 +15,9 @@ export default function Checkout() {
   const [tax, updateTax] = useState<number>(0)
   const [total, updateTotal] = useState<number>(0)
   const [showTaxID, updateShowTaxID] = useState(false)
-
+  const [clicked, setClicked] = useState(false)
   async function handleClick() {
+    setClicked(true)
     if (invalidTaxID !== "") return
     const stripe = await getStripe()
     var code: any
@@ -107,8 +108,8 @@ export default function Checkout() {
               <TotalSum total={total} />
             </div>
             <div className="pt-20 pb-20">
-              <button className={`btn btn-blue btn-popup float-right rounded py-3 px-8 ${invalidTaxID !== "" ? "opacity-50" : ""}`} disabled={invalidTaxID !== ""} onClick={handleClick} >
-                Next
+              <button className={`btn btn-blue btn-popup float-right rounded py-3 px-8 w-40 ${invalidTaxID !== "" ? "opacity-50" : ""}`} disabled={invalidTaxID !== ""} onClick={handleClick} >
+                {clicked? "Loading..." : "Next"}
             </button>
             </div>
           </div>
