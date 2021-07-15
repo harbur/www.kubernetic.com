@@ -1,7 +1,6 @@
+import InputField from "@components/ui/form/InputField";
 import Link from "next/link";
-import { useEffect, useState } from "react";
-import { Divider, FormButton, FormCheckbox, FormDropdown, FormInput, Header, Input, Segment } from "semantic-ui-react";
-import HeaderSubHeader from "semantic-ui-react/dist/commonjs/elements/Header/HeaderSubheader";
+import { useState } from "react";
 
 const expectedUsersOptions = [
   { key: "1", text: "1", value: "1" },
@@ -24,11 +23,11 @@ export default function TrialForm() {
       <p className="pt-5 pb-5 font-extralight">After signing up, we will send you a trial license which will be active for 30 days with seats for 10 users. Once you get your license you can follow the installation process in <Link href="https://docs.kubernetic.com/installation/team"><a>our guide</a></Link>.</p>
       <form name="enterprise-trial" method="POST" aria-disabled={true} data-netlify="true">
         <h6 className="pt-4 pb-2 underline">Trial Details</h6>
-        <FormInput label="Your Name" required type="text" name="name" id="name" />
-        <FormInput label="Company Email" required type="email" name="email" id="email" />
-        <FormInput label="Job Title" required type="text" name="job-title" id="job-title" />
+        <InputField label="Your Name" name="name" required/>
+        <InputField label="Company Email" name="email" required/>
+        <InputField label="Job Title" name="job-title" required/>
         <h6 className="pt-4 pb-2 underline">Organization</h6>
-        <FormInput label="Country" required type="text" name="country" id="country" />
+        <InputField label="Country" name="country" required/>
         <div className="inline-block relative w-full required field">
           <label>Expected Users</label>
           <div className="relative">
@@ -47,8 +46,7 @@ export default function TrialForm() {
 
         </div>
 
-        <FormInput label="Phone" name="phone" id="phone" />
-        <Divider hidden />
+        <InputField label="Phone" name="phone" />
 
         <label className="block pt-4">
           <input name="gdpr" id="gdpr" type="checkbox" checked={gdpr} onChange={() => updateGDPR(!gdpr)} />
@@ -60,7 +58,7 @@ export default function TrialForm() {
           <span className="pl-3 italic text-sm">I agree to the Harbur <Link href="https://harbur.io/privacy/index.html"><a rel="noopener" target="_blank" className="border-b border-gray-500 border-dotted">Terms of Use & Privacy Policy</a></Link>.</span>
         </label>
 
-        <Input type="hidden" name="form-name" value="enterprise-trial" />
+        <input type="hidden" name="form-name" value="enterprise-trial" />
         <button className={`btn btn-green btn-popup mt-6 inline-flex rounded py-3 w-full ${!terms ? "opacity-50" : ""}`} type="submit" disabled={!terms}>Create Trial</button>
       </form>
     </div>
