@@ -1,6 +1,5 @@
 import { CircularProgress } from '@material-ui/core';
 import React, { useMemo, useState } from 'react';
-import useMousetrap from '../../hooks/use-mousetrap';
 import TooltipWithShortcut from '../tooltips/TooltipWithShortcut';
 
 export interface ButtonProps {
@@ -33,8 +32,6 @@ export default function Button({ loading = false, disabled = false, text, autofo
     updateLoading(false)
   }
 
-  useMousetrap(shortcut?.toLowerCase() || "", click);
-
   return <TooltipWithShortcut description={description} shortcut={shortcut} placement="bottom">
     <button data-tip data-for={text}
       className={`relative items-center ${typeClass}
@@ -49,7 +46,7 @@ export default function Button({ loading = false, disabled = false, text, autofo
       {currentLoading && <div className="absolute inset-1/2 -mt-2 -mx-2.5"><CircularProgress color="inherit" className="text-white" size={16} /></div>}
       <span className={`${loading && 'opacity-0'}`}>
         {text}&#8203;
-    </span>
+      </span>
     </button>
   </TooltipWithShortcut>
 }
