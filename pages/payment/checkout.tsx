@@ -4,8 +4,7 @@ import Layout from '@components/layouts/Layout';
 import licenseServer from '@utils/services/licenseServer';
 import getStripe from '@utils/stripe/getStripe';
 import React, { useEffect, useMemo, useState } from "react";
-import { Form } from 'semantic-ui-react';
-import CountryField from './components/CountryField';
+import CountryField, { isEuropeanCountry } from './components/CountryField';
 
 export default function Checkout() {
   const [licenses, updateLicenses] = useState(1)
@@ -17,7 +16,8 @@ export default function Checkout() {
   const [total, updateTotal] = useState<number>(0)
   const [showTaxID, updateShowTaxID] = useState(false)
   const [clicked, setClicked] = useState(false)
-  async function handleClick() {
+  async function handleClick(e: any) {
+    e.preventDefault()
     setClicked(true)
     if (invalidTaxID !== "") return
     const stripe = await getStripe()
@@ -27,6 +27,7 @@ export default function Checkout() {
     }
     code = await licenseServer.createSession(licenses, taxID, country)
     await stripe!.redirectToCheckout({ sessionId: code.id })
+    return false
   }
 
   // Calculate showTaxID
@@ -90,7 +91,7 @@ export default function Checkout() {
     <Layout title="Payment Checkout">
       <HeaderSolid />
       <div className="pt-40 pb-10">
-        <Form>
+        <form onSubmit={handleClick}>
           <div className="pl-20 pr-20 md:px-32 lg:px-64 divider divide-y">
             <div>
               <CountryField value={country} onChange={updateCountry} />
@@ -108,12 +109,12 @@ export default function Checkout() {
               <TotalSum total={total} />
             </div>
             <div className="pt-20 pb-20">
-              <button className={`btn btn-blue btn-popup float-right rounded py-3 px-8 w-40 ${invalidTaxID !== "" ? "opacity-50" : ""}`} disabled={invalidTaxID !== ""} onClick={handleClick} >
+              <button type="submit" value="submit" className={`btn btn-blue btn-popup float-right rounded py-3 px-8 w-40 ${invalidTaxID !== "" ? "opacity-50" : ""}`} disabled={invalidTaxID !== ""} >
                 {clicked ? "Loading..." : "Next"}
               </button>
             </div>
           </div>
-        </Form>
+        </form>
         <div className="md:pt-20 pt-12 pl-4 pr-4 text-center italic font-light text-gray-700 text-sm">
           We use industry-standard encryption to protect the confidentiality of your personal information.
           This purchase and product fulfillment are through Stripe, a trusted reseller for https://kubernetic.com.
@@ -127,13 +128,14 @@ export default function Checkout() {
 function TaxIDField({ value, onChange, invalidTaxID }: { value: string, onChange(value: string): void, invalidTaxID: string }) {
   return (
     <div className="block pb-8 pt-2">
-      <Form.Input
-        className="float-right w-40"
-        value={value}
-        onChange={e => onChange(e.currentTarget.value)}
-        error={invalidTaxID}
-      />
-
+      <div className="float-right grid">
+        <input
+          className={`mt-2 w-40 border outline-none h-10 ${invalidTaxID ? "border-red-500" : "focus:border-blue-400"} px-4 rounded-md`}
+          value={value}
+          onChange={e => onChange(e.currentTarget.value)}
+        />
+        {invalidTaxID && <span className="float-right italic text-xs text-gray-500 text-right">{invalidTaxID}</span>}
+      </div>
       <div className="flex-grow pt-2" >VAT ID <span data-balloon-length="large" aria-label="The VAT ID is only relevant for corporate customers within the EU.  The VAT ID consists of two letters identifying the country (ES), and the country-specific number of digits. Enter your VAT ID in accordance with your country-specific format. If this does not apply to you, or you are an individual, leave the VAT ID field empty." data-balloon-pos="up" className="bg-gray-200 rounded text-gray-700"> &nbsp;?&nbsp;</span></div>
     </div>
   )
@@ -143,9 +145,8 @@ function TaxIDField({ value, onChange, invalidTaxID }: { value: string, onChange
 function LicensesField({ value, onChange }: { value: number, onChange(value: number): void }) {
   return (
     <div className="block pb-4">
-      <Form.Input
-        size="mini"
-        className="float-right w-40"
+      <input
+        className="float-right mt-2 w-40 border outline-none h-10 focus:border-blue-400 px-4 rounded-md"
         min={1}
         type="number"
         value={value}
@@ -185,36 +186,3 @@ function TotalSum({ total }: { total: number }) {
   )
 }
 
-function isEuropeanCountry(country: string): boolean {
-  switch (country) {
-    case "Austria":
-    case "Belgium":
-    case "Bulgaria":
-    case "Croatia":
-    case "Cyprus":
-    case "Czech Republic":
-    case "Denmark":
-    case "Estonia":
-    case "Finland":
-    case "France":
-    case "Germany":
-    case "Greece":
-    case "Hungary":
-    case "Ireland":
-    case "Italy":
-    case "Latvia":
-    case "Lithuania":
-    case "Luxembourg":
-    case "Malta":
-    case "Netherlands":
-    case "Poland":
-    case "Portugal":
-    case "Romania":
-    case "Slovakia":
-    case "Slovenia":
-    case "Spain":
-    case "Sweden":
-      return true;
-  }
-  return false
-}

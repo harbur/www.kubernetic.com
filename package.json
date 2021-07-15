@@ -39,7 +39,6 @@
     "remark": "^13.0.0",
     "remark-emoji": "^2.2.0",
     "remark-images": "^2.0.0",
-    "semantic-ui-react": "^2.0.3",
     "simple-functional-loader": "^1.2.1",
     "strip-markdown": "^3.1.2",
     "stripe": "8.161.0",
