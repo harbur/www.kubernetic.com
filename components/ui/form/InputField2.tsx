@@ -1,4 +1,5 @@
 import React from "react";
+import { DeepMap, FieldError, UseFormRegister } from "react-hook-form";
 
 export interface InputFieldProps {
   label: string;
@@ -6,22 +7,23 @@ export interface InputFieldProps {
   placeholder?: string;
   description?: string;
   info?: string;
-  value?: string;
   required?: boolean;
   readOnly?: boolean;
-  onChange?(name: string): void;
+  state?: "create" | "view" | "edit";
+  register: UseFormRegister<any>;
+  errors: DeepMap<any, FieldError>;
 }
 
-export default function InputField({
+export default function InputField2({
   label,
   name,
   placeholder,
   description,
   info,
-  value,
   required = false,
   readOnly = false,
-  onChange = () => {},
+  register,
+  errors,
 }: InputFieldProps) {
   return (
     <>
@@ -33,15 +35,14 @@ export default function InputField({
         {info && <span data-balloon-length="large" aria-label={info} data-balloon-pos="up" className="bg-gray-200 rounded text-gray-700"> ?&nbsp;</span>}
       </label>
       <input
-
+        {...register(name)}
         disabled={readOnly}
         required={required}
         name={name}
-        value={value}
         placeholder={placeholder}
-        className="w-full mt-1 border h-10 rounded-md px-2 py-1 text-sm"
-        onChange={(e) => onChange(e.target.value)}
+        className={`w-full mt-1 border h-10 rounded-md px-2 py-1 text-sm ${errors[name]? "border-red-500":""}`}
       />
+      {errors[name] && <p className="pt-1 text-sm text-gray-600 italic">{errors[name].message}</p>}
       <p className="mb-1 text-xs text-gray-500">{description}</p>
     </>
   );

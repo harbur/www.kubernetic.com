@@ -1,9 +1,10 @@
+import { UseFormRegister } from "react-hook-form";
 
-function CountryField({ value, onChange }: { value: string, onChange(value: string): void }) {
+function CountryField({ register }: { register: UseFormRegister<any> }) {
     return (
         <div className="float-right w-56 block relative align-text-bottom pr-4 text-right">
             <div className="relative">
-                <select className="block appearance-none w-full hover:border-gray-500 px-4 py-2 pr-8 leading-tight focus:outline-none focus:border bg-transparent focus:border-blue-400" name="country" id="country" value={value} onChange={(e) => onChange(e.currentTarget.value)}>
+                <select className="block appearance-none w-full hover:border-gray-500 px-4 py-2 pr-8 leading-tight focus:outline-none focus:border bg-transparent focus:border-blue-400" {...register("country")}>
                     <option hidden></option>
                     <option value="Afganistan">Afghanistan</option>
                     <option value="Albania">Albania</option>

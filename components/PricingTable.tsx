@@ -61,7 +61,7 @@ function PricingColumnIndividual() {
         </ul>
       </div>
       <div className="py-6 px-10">
-        <PricingButton to="/payment/checkout" title="Buy Desktop License" />
+        <PricingButton to="/payment/checkout/personal" title="Buy Desktop License" />
       </div>
     </div>
   )
