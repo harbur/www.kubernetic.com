@@ -34,7 +34,6 @@ export default function Checkout() {
     const [clicked, setClicked] = useState(false)
 
     async function onSubmit(data: CheckoutForm) {
-        console.log("data: ", data)
         setClicked(true)
         const stripe = await getStripe()
         var code: any
