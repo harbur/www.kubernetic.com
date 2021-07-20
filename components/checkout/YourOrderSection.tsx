@@ -3,7 +3,12 @@ import { useEffect, useState } from "react";
 import { UseFormRegister } from "react-hook-form";
 import CountryField, { isEuropeanCountry } from "./CountryField";
 
-export default function YourOrderSection({ register, watch, type }: { register: any, watch: any, type: string }) {
+type YourOrderSectionProps = {
+    register: any,
+    watch: any,
+    checkoutType: "personal" | "comercial"
+}
+export default function YourOrderSection({ register, watch, checkoutType }: YourOrderSectionProps) {
     const licenses = watch("licenses")
     const country = watch("country")
 
@@ -18,28 +23,25 @@ export default function YourOrderSection({ register, watch, type }: { register: 
         // COMERCIAL LICENSES
 
         // On Spain Tax is not excluded, so we collect 21%
-        if (type === "comercial" && country === "Spain") {
+        if (checkoutType === "comercial" && country === "Spain") {
             setTaxPercent(21)
             return
         }
         // On other EU countries we don't collect Tax
-        if (type === "comercial" && isEuropeanCountry(country)) {
+        if (checkoutType === "comercial" && isEuropeanCountry(country)) {
             setTaxPercent(0)
             return
         }
         // On the rest of the countries we don't collect Tax
-        if (type === "comercial") {
+        if (checkoutType === "comercial") {
             setTaxPercent(0)
             return
         }
-
         // PERSONAL LICENSES
         // For personal Licenses (without TAX ID), we collect 21%
-        if (type !== "comercial") {
-            setTaxPercent(21)
-            return
-        }
-    }, [country, type])
+        setTaxPercent(21)
+        return
+    }, [country, checkoutType])
 
     // Calculate Subtotal
     useEffect(() => {

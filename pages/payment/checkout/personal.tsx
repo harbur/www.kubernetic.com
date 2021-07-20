@@ -9,7 +9,7 @@ import { useForm } from "react-hook-form";
 import * as yup from "yup";
 
 const schema = yup.object().shape({
-    type: yup.string().required(),
+    checkoutType: yup.string().required(),
     country: yup.string().optional(),
     licenses: yup.number().positive().integer().optional(),
 });
@@ -19,7 +19,8 @@ export default function Checkout() {
         mode: 'onBlur',
         defaultValues: {
             licenses: 1,
-            type: "personal",
+            type: "desktop",
+            checkoutType: "personal",
         },
         resolver: yupResolver(schema)
     });
@@ -48,9 +49,9 @@ export default function Checkout() {
                 <div className="pl-20 pr-20 md:px-32 lg:px-64">
                     <h1 className="text-3xl font-bold text-gray-600 py-10">Kubernetic Desktop checkout</h1>
 
-                    <PaymentTabs type="personal" />
+                    <PaymentTabs checkoutType="personal" />
 
-                    <YourOrderSection register={register} watch={watch} type="personal" />
+                    <YourOrderSection register={register} watch={watch} checkoutType="personal" />
                     <div className="pt-20 pb-20">
                         <button type="submit" value="submit" className="btn btn-blue btn-popup float-right rounded py-3 px-8 w-40"  >
                             {clicked ? "Loading..." : "Next"}

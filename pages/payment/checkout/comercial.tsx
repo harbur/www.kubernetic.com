@@ -11,6 +11,7 @@ import * as yup from "yup";
 
 
 const schema = yup.object().shape({
+    checkoutType: yup.string().required(),
     clientName: yup.string().required(),
     clientCif: yup.string().optional(),
     clientAddress: yup.string().optional(),
@@ -20,13 +21,13 @@ const schema = yup.object().shape({
     licenses: yup.number().positive().integer().optional(),
 });
 
-
 export default function Checkout() {
     const { register, watch, handleSubmit, setValue, formState: { errors } } = useForm<CheckoutForm>({
         mode: 'onBlur',
         defaultValues: {
             licenses: 1,
-            type: "comercial",
+            type: "desktop",
+            checkoutType: "comercial",
         },
         resolver: yupResolver(schema)
     });
@@ -56,7 +57,7 @@ export default function Checkout() {
                 <div className="pl-20 pr-20 md:px-32 lg:px-64">
                     <h1 className="text-3xl font-bold text-gray-600 py-10">Kubernetic Desktop checkout</h1>
 
-                    <PaymentTabs type="comercial" />
+                    <PaymentTabs checkoutType="comercial" />
 
                     <div className="pt-10">
                         <h4>Company Information</h4>
@@ -68,7 +69,7 @@ export default function Checkout() {
                         <InputField2 errors={errors} register={register} name="clientPostalCode" label="Postal code / ZIP" />
                     </div>
 
-                    <YourOrderSection register={register} watch={watch} type="comercial" />
+                    <YourOrderSection register={register} watch={watch} checkoutType="comercial" />
                     <div className="pt-20 pb-20">
                         <button type="submit" value="submit" className="btn btn-blue btn-popup float-right rounded py-3 px-8 w-40"  >
                             {clicked ? "Loading..." : "Next"}
