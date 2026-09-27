@@ -26,7 +26,7 @@ const Post = ({ post, previous, next, toc }: Props) => {
             <HeaderSolid />
             <div className="flex">
                 <div className="flex-1" />
-                <article className="flex-shrink prose pt-8 pb-10 px-8 max-w-2xl overflow-hidden">
+                <article className="shrink prose pt-8 pb-10 px-8 max-w-2xl overflow-hidden">
                     <PostBody post={post} />
                     <MorePosts previous={previous} next={next} />
                 </article>
@@ -41,8 +41,8 @@ type MorePostsProps = { previous?: PostType, next?: PostType }
 function MorePosts({ previous, next }: MorePostsProps) {
     return (
         <div className='flex w-full py-10 px-10'>
-            <div className="flex-grow" />
-            <div className="flex-grow" />
+            <div className="grow" />
+            <div className="grow" />
         </div>
     )
 }

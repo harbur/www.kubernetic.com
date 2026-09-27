@@ -34,7 +34,7 @@ function HeaderShell({ className, innerClassName }: HeaderShellProps) {
       <div className={innerClassName}>
         <div className="flex py-8 items-center">
           <Logo />
-          <div className="flex-grow"></div>
+          <div className="grow"></div>
           <nav className="hidden md:flex items-center justify-end space-x-8">
             {links.map(l => <HeaderLink key={l.to} {...l} />)}
             <div className="px-4" />
@@ -42,7 +42,7 @@ function HeaderShell({ className, innerClassName }: HeaderShellProps) {
           </nav>
           <button
             type="button"
-            className="md:hidden -mr-2 p-2 text-white rounded-md hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-white/60 transition"
+            className="md:hidden -mr-2 p-2 text-white rounded-md hover:bg-white/10 focus:outline-hidden focus-visible:ring-2 focus-visible:ring-white/60 transition"
             aria-label={open ? "Close menu" : "Open menu"}
             aria-expanded={open}
             aria-controls="mobile-menu"
@@ -65,7 +65,7 @@ function HeaderShell({ className, innerClassName }: HeaderShellProps) {
                 <Link
                   href={l.to}
                   onClick={() => setOpen(false)}
-                  className="block w-full px-4 py-3 rounded-md text-lg font-medium text-white hover:bg-white/10 hover:text-white focus:outline-none focus:bg-white/10 transition"
+                  className="block w-full px-4 py-3 rounded-md text-lg font-medium text-white hover:bg-white/10 hover:text-white focus:outline-hidden focus:bg-white/10 transition"
                 >
                   {l.title}
                 </Link>
@@ -108,7 +108,7 @@ export function HeaderSolid() {
 type HeaderLinkProps = { to: string, title: string }
 function HeaderButton({ to, title }: HeaderLinkProps) {
   return (
-    <span className="inline-flex rounded-md shadow">
+    <span className="inline-flex rounded-md shadow-sm">
       <Link href={to} className="btn btn-indigo btn-popup inline-flex items-center justify-center px-4 py-2 rounded-md">
         {title}
       </Link>
@@ -119,7 +119,7 @@ function HeaderButton({ to, title }: HeaderLinkProps) {
 function HeaderLink({ to, title }: HeaderLinkProps) {
   return (
     <span className="inline-flex">
-      <Link href={to} className="whitespace-nowrap text-base leading-6 font-medium text-white hover:underline hover:text-white focus:outline-none focus:text-white">
+      <Link href={to} className="whitespace-nowrap text-base leading-6 font-medium text-white hover:underline hover:text-white focus:outline-hidden focus:text-white">
         {title}
       </Link>
     </span>

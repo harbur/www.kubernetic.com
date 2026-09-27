@@ -36,7 +36,7 @@ export default function Button({ loading = false, disabled = false, text, autofo
     <button data-tip data-for={text}
       className={`relative items-center ${typeClass}
       px-3 py-1 rounded-md font-medium text-sm tracking-tight 
-      focus:outline-none focus:ring disabled:opacity-50`}
+      focus:outline-hidden focus:ring-3 disabled:opacity-50`}
       autoFocus={autofocus}
       disabled={loading || disabled}
       type="submit"

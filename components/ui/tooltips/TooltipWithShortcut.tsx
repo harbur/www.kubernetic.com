@@ -28,12 +28,12 @@ function TooltipWithShortcut({ description, groupShortcut, then = false, shortcu
       <div className="bg-gray-800 p-1 border rounded-md border-gray-700 text-xs text-gray-200 space-x-2 drop-shadow-lg">
         <span>{description}</span>
         {shortcut && <span className="text-xs text-gray-400">
-          {groupShortcut && <span><span className="bg-gray-700 text-gray-300 px-1 py-0.5 rounded-sm font-mono text-xs">{groupShortcut}</span>
+          {groupShortcut && <span><span className="bg-gray-700 text-gray-300 px-1 py-0.5 rounded-xs font-mono text-xs">{groupShortcut}</span>
             &nbsp;
             {then && <span>then</span> || <span>+</span>}
             &nbsp;
           </span>}
-          <span className="bg-gray-700 text-gray-300 px-1 py-0.5 rounded-sm font-mono text-xs">{shortcut}</span></span>}
+          <span className="bg-gray-700 text-gray-300 px-1 py-0.5 rounded-xs font-mono text-xs">{shortcut}</span></span>}
       </div>
     } enterDelay={750} enterNextDelay={750} placement={placement} componentsProps={{
       tooltip: {

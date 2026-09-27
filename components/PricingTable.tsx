@@ -14,7 +14,7 @@ export default function PricingTable() {
   return (
     <>
       <div id="pricing" className="bg-gray-200">
-        <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-(--breakpoint-xl) mx-auto px-4 sm:px-6 lg:px-8">
           <div className="lg:text-center pb-20">
             <h2 className="pt-10 text-3xl font-light sm:text-6xl sm:leading-tight">The right price for you</h2>
           </div>
@@ -166,7 +166,7 @@ function PricingListItem({ title, subtitle }: PricingListItemProps) {
 type PricingButtonProps = { to: string, title: string }
 function PricingButton({ to, title }: PricingButtonProps) {
   return (
-    <Link href={to} className="btn btn-blue btn-popup inline-flex rounded py-3 w-full">
+    <Link href={to} className="btn btn-blue btn-popup inline-flex rounded-sm py-3 w-full">
       <span>{title}</span>
     </Link>
   )
@@ -205,7 +205,7 @@ function BuyDesktopButton() {
         type="button"
         onClick={buy}
         disabled={clicked}
-        className="btn btn-blue btn-popup inline-flex rounded py-3 w-full disabled:opacity-60"
+        className="btn btn-blue btn-popup inline-flex rounded-sm py-3 w-full disabled:opacity-60"
       >
         <span>{clicked ? "Redirecting to checkout..." : "Buy Desktop License"}</span>
       </button>

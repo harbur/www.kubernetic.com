@@ -39,7 +39,7 @@ export default function Checkout() {
         </div>
       </div>
       <div className="pt-20 pb-20">
-        <button type="button" onClick={buy} disabled={clicked} className="btn btn-blue btn-popup float-right rounded py-3 px-8 disabled:opacity-60">
+        <button type="button" onClick={buy} disabled={clicked} className="btn btn-blue btn-popup float-right rounded-sm py-3 px-8 disabled:opacity-60">
           {clicked ? "Redirecting to checkout..." : "Continue to checkout"}
         </button>
         {error && <p className="clear-both float-right pt-2 text-sm text-red-600 italic">{error}</p>}

@@ -12,12 +12,12 @@ export default function PriceUpdate() {
     <>
       {open && (
         <div className="px-5 py-2 md:py-3 bg-black flex text-xs md:text-sm ">
-          <div className="flex-grow" />
+          <div className="grow" />
           <Link href="/#pricing" className="text-white text-center">
             We&apos;re updating our pricing, with limited time 50% discount until 8
             of May.
           </Link>
-          <div className="flex-grow"/>
+          <div className="grow"/>
           <span onClick={close} className="cursor-pointer text-white">
             x
           </span>

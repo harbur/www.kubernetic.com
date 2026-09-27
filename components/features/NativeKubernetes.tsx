@@ -3,7 +3,7 @@ import React from "react"
 export default function NativeKubernetes() {
   return (
     <div className="py-12 bg-gray-800 stripes background">
-      <div className="max-w-screen-xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-(--breakpoint-xl) mx-auto px-4 sm:px-6 lg:px-8">
         <div className="lg:text-center">
           <h3 className="mt-2 text-3xl leading-8 font-extralight tracking-widest text-gray-200 sm:text-4xl sm:leading-10">
             Native Kubernetes support

@@ -74,7 +74,7 @@ export default function TrialForm() {
         <div className="inline-block relative w-full required field">
           <label>Expected Users</label>
           <div className="relative">
-            <select className="block appearance-none w-full bg-white border hover:border-gray-500 px-4 py-2 pr-8 rounded leading-tight focus:outline-none focus:border focus:border-blue-400" {...register("expectedUsers")}>
+            <select className="block appearance-none w-full bg-white border hover:border-gray-500 px-4 py-2 pr-8 rounded-sm leading-tight focus:outline-hidden focus:border focus:border-blue-400" {...register("expectedUsers")}>
               <option value="1">1</option>
               <option value="5">5</option>
               <option value="10">10</option>
@@ -100,7 +100,7 @@ export default function TrialForm() {
         </CheckboxField2>
 
         <input type="hidden" name="form-name" value="enterprise-trial" />
-        <button className={`btn btn-green btn-popup mt-6 inline-flex rounded py-3 w-full ${!terms ? "opacity-50" : ""}`} type="submit" disabled={!terms}>Create Trial</button>
+        <button className={`btn btn-green btn-popup mt-6 inline-flex rounded-sm py-3 w-full ${!terms ? "opacity-50" : ""}`} type="submit" disabled={!terms}>Create Trial</button>
       </form>
     </div>
   )

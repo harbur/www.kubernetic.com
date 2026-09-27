@@ -30,7 +30,7 @@ export default function InputField({
         &nbsp;
         {required && <span className="text-red-500">*</span>}
         &nbsp;
-        {info && <span data-balloon-length="large" aria-label={info} data-balloon-pos="up" className="bg-gray-200 rounded text-gray-700"> ?&nbsp;</span>}
+        {info && <span data-balloon-length="large" aria-label={info} data-balloon-pos="up" className="bg-gray-200 rounded-sm text-gray-700"> ?&nbsp;</span>}
       </label>
       <input
 
