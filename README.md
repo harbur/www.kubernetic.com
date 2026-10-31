@@ -59,6 +59,13 @@ on, customer creation **always** (one-time price only), promotion codes
 allowed, and after completion a redirect to
 `https://kubernetic.com/payment/success?session_id={CHECKOUT_SESSION_ID}`.
 
+## Downloads
+
+The installers are served straight from S3, so Plausible only sees them through
+the `Download` event the download buttons fire, with the platform as `os`
+(`mac`, `windows`, `linux`). `Download` has to exist as a goal on the
+kubernetic.com site in Plausible to show up on its dashboard.
+
 ## Country
 
 A country is an ISO 3166-1 alpha-2 code (`ES`, not `Spain`) — that is what the

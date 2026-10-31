@@ -27,6 +27,9 @@ declare global {
 /** The Buy click: the checkout goal the admin's funnel reads. */
 export const CHECKOUT_EVENT = 'Checkout'
 
+/** The download click: the installers live on S3, out of the script's sight. */
+export const DOWNLOAD_EVENT = 'Download'
+
 export function trackEvent(event: string, props?: PlausibleProps, callback?: () => void) {
   if (typeof window === 'undefined') {
     callback?.()
