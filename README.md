@@ -63,8 +63,12 @@ allowed, and after completion a redirect to
 
 The installers are served straight from S3, so Plausible only sees them through
 the `Download` event the download buttons fire, with the platform as `os`
-(`mac`, `windows`, `linux`). `Download` has to exist as a goal on the
-kubernetic.com site in Plausible to show up on its dashboard.
+(`mac`, `windows`, `linux`) and the release as `version`. `Download` has to
+exist as a goal on the kubernetic.com site in Plausible to show up on its
+dashboard.
+
+A new release is one change: `VERSION` in `components/CTAButton.tsx` names the
+installers and tags the event.
 
 ## Country
 
