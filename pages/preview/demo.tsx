@@ -13,7 +13,7 @@ import { useEffect, useState } from "react"
  */
 
 // The booking page: opened in a new tab, so the click is reported and the demo stays open.
-const BOOK_CALL_URL = "https://cal.com/dimitris-kapanidis-exiddk/30min"
+const BOOK_CALL_URL = "https://cal.com/dimitris-kapanidis-exiddk/kubernetic-5-demo"
 
 const STOPS: Stop[] = [
   { label: "A Page", hint: "Argo CD, as your team sees it", path: "/p/argocd" },
