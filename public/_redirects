@@ -4,3 +4,5 @@
 # Retired checkout pages, still listed in search results.
 /payment/checkout/personal /pricing 301
 /payment/checkout/commercial /pricing 301
+# Prospect previews: every /preview/<slug> serves the same page; the slug is for analytics.
+/preview/* /preview/demo 200

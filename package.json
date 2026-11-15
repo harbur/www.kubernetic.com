@@ -12,6 +12,7 @@
   "dependencies": {
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",
+    "@harbur/kubernetic-portal-demo": "^5.0.4",
     "@hookform/resolvers": "^2.8.2",
     "@mdx-js/loader": "^2.0.0",
     "@mui/icons-material": "^5.18.0",

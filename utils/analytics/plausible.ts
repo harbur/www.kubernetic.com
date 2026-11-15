@@ -30,6 +30,9 @@ export const CHECKOUT_EVENT = 'Checkout'
 /** The download click: the installers live on S3, out of the script's sight. */
 export const DOWNLOAD_EVENT = 'Download'
 
+/** A click on the hidden preview page: `client` is the slug, `action` what was clicked. */
+export const PREVIEW_EVENT = 'Preview'
+
 export function trackEvent(event: string, props?: PlausibleProps, callback?: () => void) {
   if (typeof window === 'undefined') {
     callback?.()
