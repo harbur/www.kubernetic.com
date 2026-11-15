@@ -12,8 +12,8 @@ import { useEffect, useState } from "react"
  * robots.txt, which would advertise it.
  */
 
-// TODO(K-240): the booking link, before the first preview goes out.
-const BOOK_CALL_URL = "#book-a-call"
+// The booking page: opened in a new tab, so the click is reported and the demo stays open.
+const BOOK_CALL_URL = "https://cal.com/dimitris-kapanidis-exiddk/30min"
 
 const STOPS: Stop[] = [
   { label: "A Page", hint: "Argo CD, as your team sees it", path: "/p/argocd" },
@@ -67,7 +67,7 @@ export default function Preview() {
             <img src="/images/kubernetic-app.png" alt="" className="h-8 w-8 rounded-lg" />
             Kubernetic
           </a>
-          <a href={BOOK_CALL_URL} onClick={() => track("book-call")}
+          <a href={BOOK_CALL_URL} target="_blank" rel="noopener noreferrer" onClick={() => track("book-call")}
             className="rounded-lg bg-sky-500 hover:bg-sky-400 text-white font-semibold px-4 py-2">
             Book a call
           </a>
@@ -81,7 +81,7 @@ export default function Preview() {
             Ready-made pages for each use case, fully customizable to your company's needs.
           </p>
           <div className="mt-8 flex flex-wrap justify-center gap-3">
-            <a href={BOOK_CALL_URL} onClick={() => track("book-call")}
+            <a href={BOOK_CALL_URL} target="_blank" rel="noopener noreferrer" onClick={() => track("book-call")}
               className="rounded-lg bg-sky-500 hover:bg-sky-400 text-white font-semibold px-5 py-3">
               Book a call
             </a>
@@ -148,7 +148,7 @@ export default function Preview() {
         <section className="max-w-3xl mx-auto px-4 sm:px-6 pb-24 text-center">
           <h2 className="text-3xl font-bold text-white">See it on your clusters.</h2>
           <p className="mt-4 text-slate-400">Thirty minutes: your setup, your teams, and what a first Page would look like for them.</p>
-          <a href={BOOK_CALL_URL} onClick={() => track("book-call")}
+          <a href={BOOK_CALL_URL} target="_blank" rel="noopener noreferrer" onClick={() => track("book-call")}
             className="mt-8 inline-block rounded-lg bg-sky-500 hover:bg-sky-400 text-white font-semibold px-6 py-3">
             Book a call
           </a>
