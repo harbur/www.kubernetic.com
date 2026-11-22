@@ -1,3 +1,4 @@
+import { AppleIcon, WinIcon } from "@components/Icons"
 import Layout from "@components/layouts/Layout"
 import BeforeAfter from "@components/preview/BeforeAfter"
 import PortalDemo, { type Stop } from "@components/preview/PortalDemo"
@@ -14,6 +15,17 @@ import { useEffect, useState } from "react"
 
 // The booking page: opened in a new tab, so the click is reported and the demo stays open.
 const BOOK_CALL_URL = "https://cal.com/dimitris-kapanidis-exiddk/kubernetic-5-demo"
+
+// The Desktop edition v5 installers, at an unlisted path on
+// downloads.kubernetic.com. The path is set in CI (the repository secret
+// PREVIEW_DOWNLOADS_URL), never here: this repo is public, and the links are
+// for whoever is sent this page. Without it, the page offers no downloads.
+const DOWNLOADS_URL = process.env.NEXT_PUBLIC_PREVIEW_DOWNLOADS_URL
+const DESKTOP_VERSION = "5.0.6"
+const DOWNLOADS = [
+  { os: "mac", label: "Download for macOS", file: `Kubernetic-${DESKTOP_VERSION}.dmg`, icon: <AppleIcon /> },
+  { os: "windows", label: "Download for Windows", file: `Kubernetic-${DESKTOP_VERSION}-windows-amd64.exe`, icon: <WinIcon /> },
+]
 
 const STOPS: Stop[] = [
   { label: "A Page", hint: "Argo CD, as your team sees it", path: "/p/argocd" },
@@ -155,6 +167,26 @@ export default function Preview() {
           <p className="mt-10 text-sm text-slate-500">
             Prefer to start on your own? The Desktop edition is free and runs the same app on your laptop.
           </p>
+          {DOWNLOADS_URL && (
+            <div id="download" className="mt-6">
+              <div className="flex flex-wrap justify-center gap-3">
+                {DOWNLOADS.map((d) => (
+                  <a key={d.os} href={`${DOWNLOADS_URL}/${d.file}`} onClick={() => track(`download-${d.os}`)}
+                    className="inline-flex items-center rounded-lg border border-white/20 hover:border-white/40 text-white font-semibold px-5 py-3">
+                    {d.icon}
+                    {d.label}
+                  </a>
+                ))}
+              </div>
+              <p className="mt-4 text-xs text-slate-500">
+                Version {DESKTOP_VERSION}. On a Mac it replaces Kubernetic 4.x. Windows may say it protected your PC: choose
+                More info, then Run anyway.{" "}
+                <a href={`${DOWNLOADS_URL}/Kubernetic-${DESKTOP_VERSION}-checksums.txt`} className="underline hover:text-slate-300">
+                  SHA-256 checksums
+                </a>
+              </p>
+            </div>
+          )}
         </section>
       </div>
     </Layout>
