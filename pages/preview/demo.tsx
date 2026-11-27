@@ -21,7 +21,7 @@ const BOOK_CALL_URL = "https://cal.com/dimitris-kapanidis-exiddk/kubernetic-5-de
 // PREVIEW_DOWNLOADS_URL), never here: this repo is public, and the links are
 // for whoever is sent this page. Without it, the page offers no downloads.
 const DOWNLOADS_URL = process.env.NEXT_PUBLIC_PREVIEW_DOWNLOADS_URL
-const DESKTOP_VERSION = "5.0.6"
+const DESKTOP_VERSION = "5.0.8"
 const DOWNLOADS = [
   { os: "mac", label: "Download for macOS", file: `Kubernetic-${DESKTOP_VERSION}.dmg`, icon: <AppleIcon /> },
   { os: "windows", label: "Download for Windows", file: `Kubernetic-${DESKTOP_VERSION}-windows-amd64.exe`, icon: <WinIcon /> },
